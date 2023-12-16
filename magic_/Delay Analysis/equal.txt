@@ -1,0 +1,8 @@
+tpd                 =  1.66912e-09 input = A0 output = a_eq_b
+tpd                 =  1.66912e-09 input = A1 output = a_eq_b
+tpd                 =  1.66912e-09 input = A2 output = a_eq_b
+tpd                 =  1.66912e-09 input = A3 output = a_eq_b
+tpd                 =  1.54644e-09 input = B0 output = a_eq_b
+tpd                 =  1.54644e-09 input = B1 output = a_eq_b
+tpd                 =  1.54644e-09 input = B2 output = a_eq_b
+tpd                 =  1.54644e-09 input = B3 output = a_eq_b

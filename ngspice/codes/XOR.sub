@@ -1,0 +1,39 @@
+.include NOT.sub
+.subckt XOR node_A node_B node_OUT VDD GND
+X_xor_1 node_A node_NA VDD GND NOT
+X_xor_2 node_B node_NB VDD GND NOT
+* PMOS PART 
+Mp1 node_P node_A VDD VDD CMOSP W = {wp1} L = {lp1}
+    + AS = {5*wp1*LAMBDA} PS = {10*LAMBDA + 2*wp1} 
+    + AD = {5*wp1*LAMBDA} PD = {10*LAMBDA + 2*wp1}
+
+Mp2 node_OUT node_NB node_P VDD CMOSP W = {wp2} L = {lp2}
+    + AS = {5*wp2*LAMBDA} PS = {10*LAMBDA + 2*wp2}
+    + AD = {5*wp2*LAMBDA} PD = {10*LAMBDA + 2*wp2}
+
+Mp3 node_R node_NA VDD VDD CMOSP W = {wp1} L = {lp1}
+    + AS = {5*wp1*LAMBDA} PS = {10*LAMBDA + 2*wp1} 
+    + AD = {5*wp1*LAMBDA} PD = {10*LAMBDA + 2*wp1}
+
+Mp4 node_OUT node_B node_R VDD CMOSP W = {wp2} L = {lp2}
+    + AS = {5*wp2*LAMBDA} PS = {10*LAMBDA + 2*wp2}
+    + AD = {5*wp2*LAMBDA} PD = {10*LAMBDA + 2*wp2}
+
+*NMOS PART 
+Mn1 node_OUT node_A node_Q GND CMOSN W = {wn1} L = {ln1}
+    + AS = {5*wn1*LAMBDA} PS = {10*LAMBDA + 2*wn1}
+    + AD = {5*wn1*LAMBDA} PD = {10*LAMBDA + 2*wn1}
+
+Mn2 node_Q node_B GND GND CMOSN W = {wn2} L = {ln2}
+    + AS = {5*wn2*LAMBDA} PS = {10*LAMBDA + 2*wn2} 
+    + AD = {5*wn2*LAMBDA} PD = {10*LAMBDA + 2*wn2}
+
+Mn3 node_OUT node_NA node_S GND CMOSN W = {wn1} L = {ln1}
+    + AS = {5*wn1*LAMBDA} PS = {10*LAMBDA + 2*wn1}
+    + AD = {5*wn1*LAMBDA} PD = {10*LAMBDA + 2*wn1}
+
+Mn4 node_S node_NB GND GND CMOSN W = {wn2} L = {ln2}
+    + AS = {5*wn2*LAMBDA} PS = {10*LAMBDA + 2*wn2} 
+    + AD = {5*wn2*LAMBDA} PD = {10*LAMBDA + 2*wn2}
+
+.ends XOR

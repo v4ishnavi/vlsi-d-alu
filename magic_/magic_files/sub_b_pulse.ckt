@@ -1,0 +1,1272 @@
+* SPICE3 file created from full_ckt.ext - technology: scmos
+.include TSMC_180nm.txt
+.model CMOSP pmos level=49 version=3.3.0
+.model CMOSN nmos level=49 version=3.3.0
+
+.param SUPPLY = 1
+.param LAMBDA = 0.18u
+
+.param width_P=8*LAMBDA
+.param  width_N = 4*LAMBDA
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+
+V_a a0 gnd 1
+V_b a1 gnd 1
+V_c a2 gnd 1
+V_d a3 gnd 1
+V_e b0 gnd pulse(0 1 0 100p 100p 100n 200n)
+V_f b1 gnd pulse(0 1 0 100p 100p 100n 200n)
+V_g b2 gnd pulse(0 1 0 100p 100p 100n 200n)
+V_h b3 gnd pulse(0 1 0 100p 100p 100n 200n)
+V_i s0 gnd 1
+V_j s1 gnd 0
+.option scale=0.09u
+
+M1000 m1_n97_n30# or2_0/a_0_n7# vdd or2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=10151 ps=6601
+M1001 m1_n97_n30# or2_0/a_0_n7# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4602 ps=3924
+M1002 or2_0/a_0_16# a_n276_n104# vdd or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=144 pd=52 as=0 ps=0
+M1003 or2_0/a_0_n7# a_n281_120# or2_0/a_0_16# or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1004 or2_0/a_0_n7# a_n276_n104# gnd Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1005 or2_0/a_0_n7# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 adder_sub_0/m2_301_n241# adder_sub_0/full_adder_0/or2_0/a_0_n7# vdd adder_sub_0/full_adder_0/or2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1007 adder_sub_0/m2_301_n241# adder_sub_0/full_adder_0/or2_0/a_0_n7# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1008 adder_sub_0/full_adder_0/or2_0/a_0_16# adder_sub_0/full_adder_0/m1_140_n182# vdd adder_sub_0/full_adder_0/or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=144 pd=52 as=0 ps=0
+M1009 adder_sub_0/full_adder_0/or2_0/a_0_n7# adder_sub_0/full_adder_0/m1_139_n111# adder_sub_0/full_adder_0/or2_0/a_0_16# adder_sub_0/full_adder_0/or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1010 adder_sub_0/full_adder_0/or2_0/a_0_n7# adder_sub_0/full_adder_0/m1_140_n182# gnd Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1011 adder_sub_0/full_adder_0/or2_0/a_0_n7# adder_sub_0/full_adder_0/m1_139_n111# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 vdd adder_sub_0/m1_n35_n310# adder_sub_0/full_adder_0/xor_0/a_n87_n91# adder_sub_0/full_adder_0/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1013 adder_sub_0/full_adder_0/a_n22_n3# adder_sub_0/full_adder_0/xor_0/a_n32_n3# adder_sub_0/full_adder_0/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1014 adder_sub_0/full_adder_0/xor_0/a_n32_n3# adder_sub_0/a_n219_233# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1015 adder_sub_0/full_adder_0/xor_0/a_n1_n13# adder_sub_0/full_adder_0/xor_0/a_n87_n91# adder_sub_0/full_adder_0/a_n22_n3# adder_sub_0/full_adder_0/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1016 adder_sub_0/full_adder_0/a_n22_n3# adder_sub_0/a_n219_233# adder_sub_0/full_adder_0/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1017 vdd adder_sub_0/a_n219_233# adder_sub_0/full_adder_0/xor_0/a_n32_n3# adder_sub_0/full_adder_0/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1018 adder_sub_0/full_adder_0/xor_0/a_31_n67# adder_sub_0/full_adder_0/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 adder_sub_0/full_adder_0/xor_0/a_n87_n91# adder_sub_0/m1_n35_n310# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1020 vdd adder_sub_0/a_n219_233# adder_sub_0/full_adder_0/xor_0/a_n1_n13# adder_sub_0/full_adder_0/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 vdd adder_sub_0/full_adder_0/xor_0/a_n32_n3# adder_sub_0/full_adder_0/xor_0/a_31_n13# adder_sub_0/full_adder_0/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1022 adder_sub_0/full_adder_0/xor_0/a_31_n13# adder_sub_0/m1_n35_n310# adder_sub_0/full_adder_0/a_n22_n3# adder_sub_0/full_adder_0/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1023 adder_sub_0/full_adder_0/xor_0/a_n1_n67# adder_sub_0/m1_n35_n310# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1024 vdd a_n281_120# adder_sub_0/full_adder_0/xor_1/a_n87_n91# adder_sub_0/full_adder_0/xor_1/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1025 sum0 adder_sub_0/full_adder_0/xor_1/a_n32_n3# adder_sub_0/full_adder_0/xor_1/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1026 adder_sub_0/full_adder_0/xor_1/a_n32_n3# adder_sub_0/full_adder_0/a_n22_n3# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1027 adder_sub_0/full_adder_0/xor_1/a_n1_n13# adder_sub_0/full_adder_0/xor_1/a_n87_n91# sum0 adder_sub_0/full_adder_0/xor_1/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1028 sum0 adder_sub_0/full_adder_0/a_n22_n3# adder_sub_0/full_adder_0/xor_1/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1029 vdd adder_sub_0/full_adder_0/a_n22_n3# adder_sub_0/full_adder_0/xor_1/a_n32_n3# adder_sub_0/full_adder_0/xor_1/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1030 adder_sub_0/full_adder_0/xor_1/a_31_n67# adder_sub_0/full_adder_0/xor_1/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1031 adder_sub_0/full_adder_0/xor_1/a_n87_n91# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1032 vdd adder_sub_0/full_adder_0/a_n22_n3# adder_sub_0/full_adder_0/xor_1/a_n1_n13# adder_sub_0/full_adder_0/xor_1/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1033 vdd adder_sub_0/full_adder_0/xor_1/a_n32_n3# adder_sub_0/full_adder_0/xor_1/a_31_n13# adder_sub_0/full_adder_0/xor_1/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1034 adder_sub_0/full_adder_0/xor_1/a_31_n13# a_n281_120# sum0 adder_sub_0/full_adder_0/xor_1/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1035 adder_sub_0/full_adder_0/xor_1/a_n1_n67# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1036 adder_sub_0/full_adder_0/m1_139_n111# adder_sub_0/full_adder_0/and2_0/a_n22_2# vdd adder_sub_0/full_adder_0/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1037 adder_sub_0/full_adder_0/m1_139_n111# adder_sub_0/full_adder_0/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1038 adder_sub_0/full_adder_0/and2_0/a_n22_2# adder_sub_0/full_adder_0/a_n22_n3# adder_sub_0/full_adder_0/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1039 adder_sub_0/full_adder_0/and2_0/a_n22_2# a_n281_120# vdd adder_sub_0/full_adder_0/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1040 adder_sub_0/full_adder_0/and2_0/a_n22_2# adder_sub_0/full_adder_0/a_n22_n3# vdd adder_sub_0/full_adder_0/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1041 adder_sub_0/full_adder_0/and2_0/a_n22_n19# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1042 adder_sub_0/full_adder_0/m1_140_n182# adder_sub_0/full_adder_0/and2_1/a_n22_2# vdd adder_sub_0/full_adder_0/and2_1/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1043 adder_sub_0/full_adder_0/m1_140_n182# adder_sub_0/full_adder_0/and2_1/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1044 adder_sub_0/full_adder_0/and2_1/a_n22_2# adder_sub_0/a_n219_233# adder_sub_0/full_adder_0/and2_1/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1045 adder_sub_0/full_adder_0/and2_1/a_n22_2# adder_sub_0/m1_n35_n310# vdd adder_sub_0/full_adder_0/and2_1/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1046 adder_sub_0/full_adder_0/and2_1/a_n22_2# adder_sub_0/a_n219_233# vdd adder_sub_0/full_adder_0/and2_1/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1047 adder_sub_0/full_adder_0/and2_1/a_n22_n19# adder_sub_0/m1_n35_n310# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1048 adder_sub_0/m2_295_n561# adder_sub_0/full_adder_1/or2_0/a_0_n7# vdd adder_sub_0/full_adder_1/or2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1049 adder_sub_0/m2_295_n561# adder_sub_0/full_adder_1/or2_0/a_0_n7# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1050 adder_sub_0/full_adder_1/or2_0/a_0_16# adder_sub_0/full_adder_1/m1_140_n182# vdd adder_sub_0/full_adder_1/or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=144 pd=52 as=0 ps=0
+M1051 adder_sub_0/full_adder_1/or2_0/a_0_n7# adder_sub_0/full_adder_1/m1_139_n111# adder_sub_0/full_adder_1/or2_0/a_0_16# adder_sub_0/full_adder_1/or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1052 adder_sub_0/full_adder_1/or2_0/a_0_n7# adder_sub_0/full_adder_1/m1_140_n182# gnd Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1053 adder_sub_0/full_adder_1/or2_0/a_0_n7# adder_sub_0/full_adder_1/m1_139_n111# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1054 vdd adder_sub_0/m1_n52_n451# adder_sub_0/full_adder_1/xor_0/a_n87_n91# adder_sub_0/full_adder_1/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1055 adder_sub_0/full_adder_1/a_n22_n3# adder_sub_0/full_adder_1/xor_0/a_n32_n3# adder_sub_0/full_adder_1/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1056 adder_sub_0/full_adder_1/xor_0/a_n32_n3# adder_sub_0/a_n223_109# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1057 adder_sub_0/full_adder_1/xor_0/a_n1_n13# adder_sub_0/full_adder_1/xor_0/a_n87_n91# adder_sub_0/full_adder_1/a_n22_n3# adder_sub_0/full_adder_1/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1058 adder_sub_0/full_adder_1/a_n22_n3# adder_sub_0/a_n223_109# adder_sub_0/full_adder_1/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1059 vdd adder_sub_0/a_n223_109# adder_sub_0/full_adder_1/xor_0/a_n32_n3# adder_sub_0/full_adder_1/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1060 adder_sub_0/full_adder_1/xor_0/a_31_n67# adder_sub_0/full_adder_1/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1061 adder_sub_0/full_adder_1/xor_0/a_n87_n91# adder_sub_0/m1_n52_n451# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1062 vdd adder_sub_0/a_n223_109# adder_sub_0/full_adder_1/xor_0/a_n1_n13# adder_sub_0/full_adder_1/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1063 vdd adder_sub_0/full_adder_1/xor_0/a_n32_n3# adder_sub_0/full_adder_1/xor_0/a_31_n13# adder_sub_0/full_adder_1/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1064 adder_sub_0/full_adder_1/xor_0/a_31_n13# adder_sub_0/m1_n52_n451# adder_sub_0/full_adder_1/a_n22_n3# adder_sub_0/full_adder_1/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1065 adder_sub_0/full_adder_1/xor_0/a_n1_n67# adder_sub_0/m1_n52_n451# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1066 vdd adder_sub_0/m2_301_n241# adder_sub_0/full_adder_1/xor_1/a_n87_n91# adder_sub_0/full_adder_1/xor_1/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1067 sum1 adder_sub_0/full_adder_1/xor_1/a_n32_n3# adder_sub_0/full_adder_1/xor_1/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1068 adder_sub_0/full_adder_1/xor_1/a_n32_n3# adder_sub_0/full_adder_1/a_n22_n3# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1069 adder_sub_0/full_adder_1/xor_1/a_n1_n13# adder_sub_0/full_adder_1/xor_1/a_n87_n91# sum1 adder_sub_0/full_adder_1/xor_1/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1070 sum1 adder_sub_0/full_adder_1/a_n22_n3# adder_sub_0/full_adder_1/xor_1/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1071 vdd adder_sub_0/full_adder_1/a_n22_n3# adder_sub_0/full_adder_1/xor_1/a_n32_n3# adder_sub_0/full_adder_1/xor_1/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1072 adder_sub_0/full_adder_1/xor_1/a_31_n67# adder_sub_0/full_adder_1/xor_1/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1073 adder_sub_0/full_adder_1/xor_1/a_n87_n91# adder_sub_0/m2_301_n241# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1074 vdd adder_sub_0/full_adder_1/a_n22_n3# adder_sub_0/full_adder_1/xor_1/a_n1_n13# adder_sub_0/full_adder_1/xor_1/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1075 vdd adder_sub_0/full_adder_1/xor_1/a_n32_n3# adder_sub_0/full_adder_1/xor_1/a_31_n13# adder_sub_0/full_adder_1/xor_1/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1076 adder_sub_0/full_adder_1/xor_1/a_31_n13# adder_sub_0/m2_301_n241# sum1 adder_sub_0/full_adder_1/xor_1/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1077 adder_sub_0/full_adder_1/xor_1/a_n1_n67# adder_sub_0/m2_301_n241# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1078 adder_sub_0/full_adder_1/m1_139_n111# adder_sub_0/full_adder_1/and2_0/a_n22_2# vdd adder_sub_0/full_adder_1/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1079 adder_sub_0/full_adder_1/m1_139_n111# adder_sub_0/full_adder_1/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1080 adder_sub_0/full_adder_1/and2_0/a_n22_2# adder_sub_0/full_adder_1/a_n22_n3# adder_sub_0/full_adder_1/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1081 adder_sub_0/full_adder_1/and2_0/a_n22_2# adder_sub_0/m2_301_n241# vdd adder_sub_0/full_adder_1/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1082 adder_sub_0/full_adder_1/and2_0/a_n22_2# adder_sub_0/full_adder_1/a_n22_n3# vdd adder_sub_0/full_adder_1/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1083 adder_sub_0/full_adder_1/and2_0/a_n22_n19# adder_sub_0/m2_301_n241# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1084 adder_sub_0/full_adder_1/m1_140_n182# adder_sub_0/full_adder_1/and2_1/a_n22_2# vdd adder_sub_0/full_adder_1/and2_1/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1085 adder_sub_0/full_adder_1/m1_140_n182# adder_sub_0/full_adder_1/and2_1/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1086 adder_sub_0/full_adder_1/and2_1/a_n22_2# adder_sub_0/a_n223_109# adder_sub_0/full_adder_1/and2_1/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1087 adder_sub_0/full_adder_1/and2_1/a_n22_2# adder_sub_0/m1_n52_n451# vdd adder_sub_0/full_adder_1/and2_1/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1088 adder_sub_0/full_adder_1/and2_1/a_n22_2# adder_sub_0/a_n223_109# vdd adder_sub_0/full_adder_1/and2_1/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1089 adder_sub_0/full_adder_1/and2_1/a_n22_n19# adder_sub_0/m1_n52_n451# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1090 adder_sub_0/m2_292_n883# adder_sub_0/full_adder_2/or2_0/a_0_n7# vdd adder_sub_0/full_adder_2/or2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1091 adder_sub_0/m2_292_n883# adder_sub_0/full_adder_2/or2_0/a_0_n7# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1092 adder_sub_0/full_adder_2/or2_0/a_0_16# adder_sub_0/full_adder_2/m1_140_n182# vdd adder_sub_0/full_adder_2/or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=144 pd=52 as=0 ps=0
+M1093 adder_sub_0/full_adder_2/or2_0/a_0_n7# adder_sub_0/full_adder_2/m1_139_n111# adder_sub_0/full_adder_2/or2_0/a_0_16# adder_sub_0/full_adder_2/or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1094 adder_sub_0/full_adder_2/or2_0/a_0_n7# adder_sub_0/full_adder_2/m1_140_n182# gnd Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1095 adder_sub_0/full_adder_2/or2_0/a_0_n7# adder_sub_0/full_adder_2/m1_139_n111# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1096 vdd adder_sub_0/m1_n55_n594# adder_sub_0/full_adder_2/xor_0/a_n87_n91# adder_sub_0/full_adder_2/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1097 adder_sub_0/full_adder_2/a_n22_n3# adder_sub_0/full_adder_2/xor_0/a_n32_n3# adder_sub_0/full_adder_2/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1098 adder_sub_0/full_adder_2/xor_0/a_n32_n3# adder_sub_0/a_n223_n19# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1099 adder_sub_0/full_adder_2/xor_0/a_n1_n13# adder_sub_0/full_adder_2/xor_0/a_n87_n91# adder_sub_0/full_adder_2/a_n22_n3# adder_sub_0/full_adder_2/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1100 adder_sub_0/full_adder_2/a_n22_n3# adder_sub_0/a_n223_n19# adder_sub_0/full_adder_2/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1101 vdd adder_sub_0/a_n223_n19# adder_sub_0/full_adder_2/xor_0/a_n32_n3# adder_sub_0/full_adder_2/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1102 adder_sub_0/full_adder_2/xor_0/a_31_n67# adder_sub_0/full_adder_2/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1103 adder_sub_0/full_adder_2/xor_0/a_n87_n91# adder_sub_0/m1_n55_n594# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1104 vdd adder_sub_0/a_n223_n19# adder_sub_0/full_adder_2/xor_0/a_n1_n13# adder_sub_0/full_adder_2/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1105 vdd adder_sub_0/full_adder_2/xor_0/a_n32_n3# adder_sub_0/full_adder_2/xor_0/a_31_n13# adder_sub_0/full_adder_2/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1106 adder_sub_0/full_adder_2/xor_0/a_31_n13# adder_sub_0/m1_n55_n594# adder_sub_0/full_adder_2/a_n22_n3# adder_sub_0/full_adder_2/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1107 adder_sub_0/full_adder_2/xor_0/a_n1_n67# adder_sub_0/m1_n55_n594# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1108 vdd adder_sub_0/m2_295_n561# adder_sub_0/full_adder_2/xor_1/a_n87_n91# adder_sub_0/full_adder_2/xor_1/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1109 sum2 adder_sub_0/full_adder_2/xor_1/a_n32_n3# adder_sub_0/full_adder_2/xor_1/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1110 adder_sub_0/full_adder_2/xor_1/a_n32_n3# adder_sub_0/full_adder_2/a_n22_n3# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1111 adder_sub_0/full_adder_2/xor_1/a_n1_n13# adder_sub_0/full_adder_2/xor_1/a_n87_n91# sum2 adder_sub_0/full_adder_2/xor_1/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1112 sum2 adder_sub_0/full_adder_2/a_n22_n3# adder_sub_0/full_adder_2/xor_1/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1113 vdd adder_sub_0/full_adder_2/a_n22_n3# adder_sub_0/full_adder_2/xor_1/a_n32_n3# adder_sub_0/full_adder_2/xor_1/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1114 adder_sub_0/full_adder_2/xor_1/a_31_n67# adder_sub_0/full_adder_2/xor_1/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1115 adder_sub_0/full_adder_2/xor_1/a_n87_n91# adder_sub_0/m2_295_n561# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1116 vdd adder_sub_0/full_adder_2/a_n22_n3# adder_sub_0/full_adder_2/xor_1/a_n1_n13# adder_sub_0/full_adder_2/xor_1/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1117 vdd adder_sub_0/full_adder_2/xor_1/a_n32_n3# adder_sub_0/full_adder_2/xor_1/a_31_n13# adder_sub_0/full_adder_2/xor_1/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1118 adder_sub_0/full_adder_2/xor_1/a_31_n13# adder_sub_0/m2_295_n561# sum2 adder_sub_0/full_adder_2/xor_1/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1119 adder_sub_0/full_adder_2/xor_1/a_n1_n67# adder_sub_0/m2_295_n561# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1120 adder_sub_0/full_adder_2/m1_139_n111# adder_sub_0/full_adder_2/and2_0/a_n22_2# vdd adder_sub_0/full_adder_2/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1121 adder_sub_0/full_adder_2/m1_139_n111# adder_sub_0/full_adder_2/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1122 adder_sub_0/full_adder_2/and2_0/a_n22_2# adder_sub_0/full_adder_2/a_n22_n3# adder_sub_0/full_adder_2/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1123 adder_sub_0/full_adder_2/and2_0/a_n22_2# adder_sub_0/m2_295_n561# vdd adder_sub_0/full_adder_2/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1124 adder_sub_0/full_adder_2/and2_0/a_n22_2# adder_sub_0/full_adder_2/a_n22_n3# vdd adder_sub_0/full_adder_2/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1125 adder_sub_0/full_adder_2/and2_0/a_n22_n19# adder_sub_0/m2_295_n561# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1126 adder_sub_0/full_adder_2/m1_140_n182# adder_sub_0/full_adder_2/and2_1/a_n22_2# vdd adder_sub_0/full_adder_2/and2_1/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1127 adder_sub_0/full_adder_2/m1_140_n182# adder_sub_0/full_adder_2/and2_1/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1128 adder_sub_0/full_adder_2/and2_1/a_n22_2# adder_sub_0/a_n223_n19# adder_sub_0/full_adder_2/and2_1/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1129 adder_sub_0/full_adder_2/and2_1/a_n22_2# adder_sub_0/m1_n55_n594# vdd adder_sub_0/full_adder_2/and2_1/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1130 adder_sub_0/full_adder_2/and2_1/a_n22_2# adder_sub_0/a_n223_n19# vdd adder_sub_0/full_adder_2/and2_1/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1131 adder_sub_0/full_adder_2/and2_1/a_n22_n19# adder_sub_0/m1_n55_n594# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1132 carry adder_sub_0/full_adder_3/or2_0/a_0_n7# vdd adder_sub_0/full_adder_3/or2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1133 carry adder_sub_0/full_adder_3/or2_0/a_0_n7# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1134 adder_sub_0/full_adder_3/or2_0/a_0_16# adder_sub_0/full_adder_3/m1_140_n182# vdd adder_sub_0/full_adder_3/or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=144 pd=52 as=0 ps=0
+M1135 adder_sub_0/full_adder_3/or2_0/a_0_n7# adder_sub_0/full_adder_3/m1_139_n111# adder_sub_0/full_adder_3/or2_0/a_0_16# adder_sub_0/full_adder_3/or2_0/w_n13_8# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1136 adder_sub_0/full_adder_3/or2_0/a_0_n7# adder_sub_0/full_adder_3/m1_140_n182# gnd Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1137 adder_sub_0/full_adder_3/or2_0/a_0_n7# adder_sub_0/full_adder_3/m1_139_n111# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1138 vdd adder_sub_0/m1_n70_n739# adder_sub_0/full_adder_3/xor_0/a_n87_n91# adder_sub_0/full_adder_3/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1139 adder_sub_0/full_adder_3/a_n22_n3# adder_sub_0/full_adder_3/xor_0/a_n32_n3# adder_sub_0/full_adder_3/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1140 adder_sub_0/full_adder_3/xor_0/a_n32_n3# adder_sub_0/a_n225_n140# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1141 adder_sub_0/full_adder_3/xor_0/a_n1_n13# adder_sub_0/full_adder_3/xor_0/a_n87_n91# adder_sub_0/full_adder_3/a_n22_n3# adder_sub_0/full_adder_3/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1142 adder_sub_0/full_adder_3/a_n22_n3# adder_sub_0/a_n225_n140# adder_sub_0/full_adder_3/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1143 vdd adder_sub_0/a_n225_n140# adder_sub_0/full_adder_3/xor_0/a_n32_n3# adder_sub_0/full_adder_3/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1144 adder_sub_0/full_adder_3/xor_0/a_31_n67# adder_sub_0/full_adder_3/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1145 adder_sub_0/full_adder_3/xor_0/a_n87_n91# adder_sub_0/m1_n70_n739# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1146 vdd adder_sub_0/a_n225_n140# adder_sub_0/full_adder_3/xor_0/a_n1_n13# adder_sub_0/full_adder_3/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1147 vdd adder_sub_0/full_adder_3/xor_0/a_n32_n3# adder_sub_0/full_adder_3/xor_0/a_31_n13# adder_sub_0/full_adder_3/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1148 adder_sub_0/full_adder_3/xor_0/a_31_n13# adder_sub_0/m1_n70_n739# adder_sub_0/full_adder_3/a_n22_n3# adder_sub_0/full_adder_3/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1149 adder_sub_0/full_adder_3/xor_0/a_n1_n67# adder_sub_0/m1_n70_n739# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1150 vdd adder_sub_0/m2_292_n883# adder_sub_0/full_adder_3/xor_1/a_n87_n91# adder_sub_0/full_adder_3/xor_1/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1151 sum3 adder_sub_0/full_adder_3/xor_1/a_n32_n3# adder_sub_0/full_adder_3/xor_1/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1152 adder_sub_0/full_adder_3/xor_1/a_n32_n3# adder_sub_0/full_adder_3/a_n22_n3# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1153 adder_sub_0/full_adder_3/xor_1/a_n1_n13# adder_sub_0/full_adder_3/xor_1/a_n87_n91# sum3 adder_sub_0/full_adder_3/xor_1/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1154 sum3 adder_sub_0/full_adder_3/a_n22_n3# adder_sub_0/full_adder_3/xor_1/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1155 vdd adder_sub_0/full_adder_3/a_n22_n3# adder_sub_0/full_adder_3/xor_1/a_n32_n3# adder_sub_0/full_adder_3/xor_1/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1156 adder_sub_0/full_adder_3/xor_1/a_31_n67# adder_sub_0/full_adder_3/xor_1/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1157 adder_sub_0/full_adder_3/xor_1/a_n87_n91# adder_sub_0/m2_292_n883# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1158 vdd adder_sub_0/full_adder_3/a_n22_n3# adder_sub_0/full_adder_3/xor_1/a_n1_n13# adder_sub_0/full_adder_3/xor_1/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1159 vdd adder_sub_0/full_adder_3/xor_1/a_n32_n3# adder_sub_0/full_adder_3/xor_1/a_31_n13# adder_sub_0/full_adder_3/xor_1/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1160 adder_sub_0/full_adder_3/xor_1/a_31_n13# adder_sub_0/m2_292_n883# sum3 adder_sub_0/full_adder_3/xor_1/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1161 adder_sub_0/full_adder_3/xor_1/a_n1_n67# adder_sub_0/m2_292_n883# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1162 adder_sub_0/full_adder_3/m1_139_n111# adder_sub_0/full_adder_3/and2_0/a_n22_2# vdd adder_sub_0/full_adder_3/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1163 adder_sub_0/full_adder_3/m1_139_n111# adder_sub_0/full_adder_3/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1164 adder_sub_0/full_adder_3/and2_0/a_n22_2# adder_sub_0/full_adder_3/a_n22_n3# adder_sub_0/full_adder_3/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1165 adder_sub_0/full_adder_3/and2_0/a_n22_2# adder_sub_0/m2_292_n883# vdd adder_sub_0/full_adder_3/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1166 adder_sub_0/full_adder_3/and2_0/a_n22_2# adder_sub_0/full_adder_3/a_n22_n3# vdd adder_sub_0/full_adder_3/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1167 adder_sub_0/full_adder_3/and2_0/a_n22_n19# adder_sub_0/m2_292_n883# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1168 adder_sub_0/full_adder_3/m1_140_n182# adder_sub_0/full_adder_3/and2_1/a_n22_2# vdd adder_sub_0/full_adder_3/and2_1/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1169 adder_sub_0/full_adder_3/m1_140_n182# adder_sub_0/full_adder_3/and2_1/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1170 adder_sub_0/full_adder_3/and2_1/a_n22_2# adder_sub_0/a_n225_n140# adder_sub_0/full_adder_3/and2_1/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1171 adder_sub_0/full_adder_3/and2_1/a_n22_2# adder_sub_0/m1_n70_n739# vdd adder_sub_0/full_adder_3/and2_1/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1172 adder_sub_0/full_adder_3/and2_1/a_n22_2# adder_sub_0/a_n225_n140# vdd adder_sub_0/full_adder_3/and2_1/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1173 adder_sub_0/full_adder_3/and2_1/a_n22_n19# adder_sub_0/m1_n70_n739# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1174 vdd a_n281_120# adder_sub_0/xor_0/a_n87_n91# adder_sub_0/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1175 adder_sub_0/m1_n35_n310# adder_sub_0/xor_0/a_n32_n3# adder_sub_0/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1176 adder_sub_0/xor_0/a_n32_n3# adder_sub_0/a_n219_n281# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1177 adder_sub_0/xor_0/a_n1_n13# adder_sub_0/xor_0/a_n87_n91# adder_sub_0/m1_n35_n310# adder_sub_0/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1178 adder_sub_0/m1_n35_n310# adder_sub_0/a_n219_n281# adder_sub_0/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1179 vdd adder_sub_0/a_n219_n281# adder_sub_0/xor_0/a_n32_n3# adder_sub_0/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1180 adder_sub_0/xor_0/a_31_n67# adder_sub_0/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1181 adder_sub_0/xor_0/a_n87_n91# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1182 vdd adder_sub_0/a_n219_n281# adder_sub_0/xor_0/a_n1_n13# adder_sub_0/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1183 vdd adder_sub_0/xor_0/a_n32_n3# adder_sub_0/xor_0/a_31_n13# adder_sub_0/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1184 adder_sub_0/xor_0/a_31_n13# a_n281_120# adder_sub_0/m1_n35_n310# adder_sub_0/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1185 adder_sub_0/xor_0/a_n1_n67# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1186 adder_sub_0/a_n225_n140# adder_sub_0/enable_0/and2_0/a_n22_2# vdd adder_sub_0/enable_0/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1187 adder_sub_0/a_n225_n140# adder_sub_0/enable_0/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1188 adder_sub_0/enable_0/and2_0/a_n22_2# a3 adder_sub_0/enable_0/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1189 adder_sub_0/enable_0/and2_0/a_n22_2# m1_n97_n30# vdd adder_sub_0/enable_0/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1190 adder_sub_0/enable_0/and2_0/a_n22_2# a3 vdd adder_sub_0/enable_0/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1191 adder_sub_0/enable_0/and2_0/a_n22_n19# m1_n97_n30# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1192 adder_sub_0/enable_0/a_139_50# m1_n97_n30# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1193 adder_sub_0/enable_0/a_263_47# m1_n97_n30# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1194 adder_sub_0/a_n223_109# adder_sub_0/enable_0/a_139_71# vdd adder_sub_0/enable_0/w_202_62# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1195 adder_sub_0/enable_0/a_9_72# m1_n97_n30# vdd adder_sub_0/enable_0/w_n5_66# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1196 adder_sub_0/enable_0/a_139_71# a1 vdd adder_sub_0/enable_0/w_162_65# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1197 adder_sub_0/enable_0/a_263_68# a0 vdd adder_sub_0/enable_0/w_286_62# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1198 adder_sub_0/enable_0/a_9_72# a2 vdd adder_sub_0/enable_0/w_32_66# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1199 adder_sub_0/enable_0/a_9_51# m1_n97_n30# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1200 adder_sub_0/enable_0/a_139_71# a1 adder_sub_0/enable_0/a_139_50# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1201 adder_sub_0/enable_0/a_263_68# a0 adder_sub_0/enable_0/a_263_47# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1202 adder_sub_0/enable_0/a_9_72# a2 adder_sub_0/enable_0/a_9_51# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1203 adder_sub_0/a_n223_n19# adder_sub_0/enable_0/a_9_72# vdd adder_sub_0/enable_0/w_72_63# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1204 adder_sub_0/enable_0/a_139_71# m1_n97_n30# vdd adder_sub_0/enable_0/w_125_65# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1205 adder_sub_0/enable_0/a_263_68# m1_n97_n30# vdd adder_sub_0/enable_0/w_249_62# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1206 adder_sub_0/a_n219_233# adder_sub_0/enable_0/a_263_68# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1207 adder_sub_0/a_n223_n19# adder_sub_0/enable_0/a_9_72# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1208 adder_sub_0/a_n219_233# adder_sub_0/enable_0/a_263_68# vdd adder_sub_0/enable_0/w_326_59# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1209 adder_sub_0/a_n223_109# adder_sub_0/enable_0/a_139_71# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1210 vdd a_n281_120# adder_sub_0/xor_1/a_n87_n91# adder_sub_0/xor_1/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1211 adder_sub_0/m1_n52_n451# adder_sub_0/xor_1/a_n32_n3# adder_sub_0/xor_1/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1212 adder_sub_0/xor_1/a_n32_n3# adder_sub_0/a_n223_n405# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1213 adder_sub_0/xor_1/a_n1_n13# adder_sub_0/xor_1/a_n87_n91# adder_sub_0/m1_n52_n451# adder_sub_0/xor_1/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1214 adder_sub_0/m1_n52_n451# adder_sub_0/a_n223_n405# adder_sub_0/xor_1/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1215 vdd adder_sub_0/a_n223_n405# adder_sub_0/xor_1/a_n32_n3# adder_sub_0/xor_1/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1216 adder_sub_0/xor_1/a_31_n67# adder_sub_0/xor_1/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1217 adder_sub_0/xor_1/a_n87_n91# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1218 vdd adder_sub_0/a_n223_n405# adder_sub_0/xor_1/a_n1_n13# adder_sub_0/xor_1/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1219 vdd adder_sub_0/xor_1/a_n32_n3# adder_sub_0/xor_1/a_31_n13# adder_sub_0/xor_1/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1220 adder_sub_0/xor_1/a_31_n13# a_n281_120# adder_sub_0/m1_n52_n451# adder_sub_0/xor_1/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1221 adder_sub_0/xor_1/a_n1_n67# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1222 adder_sub_0/a_n225_n654# adder_sub_0/enable_1/and2_0/a_n22_2# vdd adder_sub_0/enable_1/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1223 adder_sub_0/a_n225_n654# adder_sub_0/enable_1/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1224 adder_sub_0/enable_1/and2_0/a_n22_2# b3 adder_sub_0/enable_1/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1225 adder_sub_0/enable_1/and2_0/a_n22_2# m1_n97_n30# vdd adder_sub_0/enable_1/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1226 adder_sub_0/enable_1/and2_0/a_n22_2# b3 vdd adder_sub_0/enable_1/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1227 adder_sub_0/enable_1/and2_0/a_n22_n19# m1_n97_n30# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1228 adder_sub_0/enable_1/a_139_50# m1_n97_n30# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1229 adder_sub_0/enable_1/a_263_47# m1_n97_n30# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1230 adder_sub_0/a_n223_n405# adder_sub_0/enable_1/a_139_71# vdd adder_sub_0/enable_1/w_202_62# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1231 adder_sub_0/enable_1/a_9_72# m1_n97_n30# vdd adder_sub_0/enable_1/w_n5_66# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1232 adder_sub_0/enable_1/a_139_71# b1 vdd adder_sub_0/enable_1/w_162_65# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1233 adder_sub_0/enable_1/a_263_68# b0 vdd adder_sub_0/enable_1/w_286_62# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1234 adder_sub_0/enable_1/a_9_72# b2 vdd adder_sub_0/enable_1/w_32_66# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1235 adder_sub_0/enable_1/a_9_51# m1_n97_n30# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1236 adder_sub_0/enable_1/a_139_71# b1 adder_sub_0/enable_1/a_139_50# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1237 adder_sub_0/enable_1/a_263_68# b0 adder_sub_0/enable_1/a_263_47# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1238 adder_sub_0/enable_1/a_9_72# b2 adder_sub_0/enable_1/a_9_51# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1239 adder_sub_0/a_n223_n533# adder_sub_0/enable_1/a_9_72# vdd adder_sub_0/enable_1/w_72_63# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1240 adder_sub_0/enable_1/a_139_71# m1_n97_n30# vdd adder_sub_0/enable_1/w_125_65# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1241 adder_sub_0/enable_1/a_263_68# m1_n97_n30# vdd adder_sub_0/enable_1/w_249_62# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1242 adder_sub_0/a_n219_n281# adder_sub_0/enable_1/a_263_68# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1243 adder_sub_0/a_n223_n533# adder_sub_0/enable_1/a_9_72# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1244 adder_sub_0/a_n219_n281# adder_sub_0/enable_1/a_263_68# vdd adder_sub_0/enable_1/w_326_59# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1245 adder_sub_0/a_n223_n405# adder_sub_0/enable_1/a_139_71# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1246 vdd a_n281_120# adder_sub_0/xor_2/a_n87_n91# adder_sub_0/xor_2/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1247 adder_sub_0/m1_n55_n594# adder_sub_0/xor_2/a_n32_n3# adder_sub_0/xor_2/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1248 adder_sub_0/xor_2/a_n32_n3# adder_sub_0/a_n223_n533# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1249 adder_sub_0/xor_2/a_n1_n13# adder_sub_0/xor_2/a_n87_n91# adder_sub_0/m1_n55_n594# adder_sub_0/xor_2/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1250 adder_sub_0/m1_n55_n594# adder_sub_0/a_n223_n533# adder_sub_0/xor_2/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1251 vdd adder_sub_0/a_n223_n533# adder_sub_0/xor_2/a_n32_n3# adder_sub_0/xor_2/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1252 adder_sub_0/xor_2/a_31_n67# adder_sub_0/xor_2/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1253 adder_sub_0/xor_2/a_n87_n91# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1254 vdd adder_sub_0/a_n223_n533# adder_sub_0/xor_2/a_n1_n13# adder_sub_0/xor_2/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1255 vdd adder_sub_0/xor_2/a_n32_n3# adder_sub_0/xor_2/a_31_n13# adder_sub_0/xor_2/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1256 adder_sub_0/xor_2/a_31_n13# a_n281_120# adder_sub_0/m1_n55_n594# adder_sub_0/xor_2/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1257 adder_sub_0/xor_2/a_n1_n67# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1258 vdd a_n281_120# adder_sub_0/xor_3/a_n87_n91# adder_sub_0/xor_3/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1259 adder_sub_0/m1_n70_n739# adder_sub_0/xor_3/a_n32_n3# adder_sub_0/xor_3/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1260 adder_sub_0/xor_3/a_n32_n3# adder_sub_0/a_n225_n654# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1261 adder_sub_0/xor_3/a_n1_n13# adder_sub_0/xor_3/a_n87_n91# adder_sub_0/m1_n70_n739# adder_sub_0/xor_3/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1262 adder_sub_0/m1_n70_n739# adder_sub_0/a_n225_n654# adder_sub_0/xor_3/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1263 vdd adder_sub_0/a_n225_n654# adder_sub_0/xor_3/a_n32_n3# adder_sub_0/xor_3/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1264 adder_sub_0/xor_3/a_31_n67# adder_sub_0/xor_3/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1265 adder_sub_0/xor_3/a_n87_n91# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1266 vdd adder_sub_0/a_n225_n654# adder_sub_0/xor_3/a_n1_n13# adder_sub_0/xor_3/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1267 vdd adder_sub_0/xor_3/a_n32_n3# adder_sub_0/xor_3/a_31_n13# adder_sub_0/xor_3/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1268 adder_sub_0/xor_3/a_31_n13# a_n281_120# adder_sub_0/m1_n70_n739# adder_sub_0/xor_3/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1269 adder_sub_0/xor_3/a_n1_n67# a_n281_120# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1270 and_ckt_0/a_n101_111# and_ckt_0/enable_0/and2_0/a_n22_2# vdd and_ckt_0/enable_0/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1271 and_ckt_0/a_n101_111# and_ckt_0/enable_0/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1272 and_ckt_0/enable_0/and2_0/a_n22_2# a3 and_ckt_0/enable_0/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1273 and_ckt_0/enable_0/and2_0/a_n22_2# a_n279_241# vdd and_ckt_0/enable_0/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1274 and_ckt_0/enable_0/and2_0/a_n22_2# a3 vdd and_ckt_0/enable_0/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1275 and_ckt_0/enable_0/and2_0/a_n22_n19# a_n279_241# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1276 and_ckt_0/enable_0/a_139_50# a_n279_241# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1277 and_ckt_0/enable_0/a_263_47# a_n279_241# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1278 and_ckt_0/a_n98_360# and_ckt_0/enable_0/a_139_71# vdd and_ckt_0/enable_0/w_202_62# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1279 and_ckt_0/enable_0/a_9_72# a_n279_241# vdd and_ckt_0/enable_0/w_n5_66# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1280 and_ckt_0/enable_0/a_139_71# a1 vdd and_ckt_0/enable_0/w_162_65# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1281 and_ckt_0/enable_0/a_263_68# a0 vdd and_ckt_0/enable_0/w_286_62# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1282 and_ckt_0/enable_0/a_9_72# a2 vdd and_ckt_0/enable_0/w_32_66# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1283 and_ckt_0/enable_0/a_9_51# a_n279_241# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1284 and_ckt_0/enable_0/a_139_71# a1 and_ckt_0/enable_0/a_139_50# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1285 and_ckt_0/enable_0/a_263_68# a0 and_ckt_0/enable_0/a_263_47# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1286 and_ckt_0/enable_0/a_9_72# a2 and_ckt_0/enable_0/a_9_51# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1287 and_ckt_0/a_n98_232# and_ckt_0/enable_0/a_9_72# vdd and_ckt_0/enable_0/w_72_63# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1288 and_ckt_0/enable_0/a_139_71# a_n279_241# vdd and_ckt_0/enable_0/w_125_65# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1289 and_ckt_0/enable_0/a_263_68# a_n279_241# vdd and_ckt_0/enable_0/w_249_62# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1290 and_ckt_0/a_n94_484# and_ckt_0/enable_0/a_263_68# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1291 and_ckt_0/a_n98_232# and_ckt_0/enable_0/a_9_72# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1292 and_ckt_0/a_n94_484# and_ckt_0/enable_0/a_263_68# vdd and_ckt_0/enable_0/w_326_59# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1293 and_ckt_0/a_n98_360# and_ckt_0/enable_0/a_139_71# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1294 and_ckt_0/a_n101_n391# and_ckt_0/enable_1/and2_0/a_n22_2# vdd and_ckt_0/enable_1/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1295 and_ckt_0/a_n101_n391# and_ckt_0/enable_1/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1296 and_ckt_0/enable_1/and2_0/a_n22_2# b3 and_ckt_0/enable_1/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1297 and_ckt_0/enable_1/and2_0/a_n22_2# a_n279_241# vdd and_ckt_0/enable_1/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1298 and_ckt_0/enable_1/and2_0/a_n22_2# b3 vdd and_ckt_0/enable_1/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1299 and_ckt_0/enable_1/and2_0/a_n22_n19# a_n279_241# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1300 and_ckt_0/enable_1/a_139_50# a_n279_241# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1301 and_ckt_0/enable_1/a_263_47# a_n279_241# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1302 and_ckt_0/a_n99_n142# and_ckt_0/enable_1/a_139_71# vdd and_ckt_0/enable_1/w_202_62# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1303 and_ckt_0/enable_1/a_9_72# a_n279_241# vdd and_ckt_0/enable_1/w_n5_66# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1304 and_ckt_0/enable_1/a_139_71# b1 vdd and_ckt_0/enable_1/w_162_65# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1305 and_ckt_0/enable_1/a_263_68# b0 vdd and_ckt_0/enable_1/w_286_62# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1306 and_ckt_0/enable_1/a_9_72# b2 vdd and_ckt_0/enable_1/w_32_66# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1307 and_ckt_0/enable_1/a_9_51# a_n279_241# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1308 and_ckt_0/enable_1/a_139_71# b1 and_ckt_0/enable_1/a_139_50# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1309 and_ckt_0/enable_1/a_263_68# b0 and_ckt_0/enable_1/a_263_47# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1310 and_ckt_0/enable_1/a_9_72# b2 and_ckt_0/enable_1/a_9_51# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1311 and_ckt_0/a_n99_n270# and_ckt_0/enable_1/a_9_72# vdd and_ckt_0/enable_1/w_72_63# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1312 and_ckt_0/enable_1/a_139_71# a_n279_241# vdd and_ckt_0/enable_1/w_125_65# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1313 and_ckt_0/enable_1/a_263_68# a_n279_241# vdd and_ckt_0/enable_1/w_249_62# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1314 and_ckt_0/a_n94_n18# and_ckt_0/enable_1/a_263_68# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1315 and_ckt_0/a_n99_n270# and_ckt_0/enable_1/a_9_72# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1316 and_ckt_0/a_n94_n18# and_ckt_0/enable_1/a_263_68# vdd and_ckt_0/enable_1/w_326_59# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1317 and_ckt_0/a_n99_n142# and_ckt_0/enable_1/a_139_71# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1318 and0 and_ckt_0/and2_0/a_n22_2# vdd and_ckt_0/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1319 and0 and_ckt_0/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1320 and_ckt_0/and2_0/a_n22_2# and_ckt_0/a_n94_484# and_ckt_0/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1321 and_ckt_0/and2_0/a_n22_2# and_ckt_0/a_n94_n18# vdd and_ckt_0/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1322 and_ckt_0/and2_0/a_n22_2# and_ckt_0/a_n94_484# vdd and_ckt_0/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1323 and_ckt_0/and2_0/a_n22_n19# and_ckt_0/a_n94_n18# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1324 and1 and_ckt_0/and2_1/a_n22_2# vdd and_ckt_0/and2_1/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1325 and1 and_ckt_0/and2_1/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1326 and_ckt_0/and2_1/a_n22_2# and_ckt_0/a_n98_360# and_ckt_0/and2_1/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1327 and_ckt_0/and2_1/a_n22_2# and_ckt_0/a_n99_n142# vdd and_ckt_0/and2_1/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1328 and_ckt_0/and2_1/a_n22_2# and_ckt_0/a_n98_360# vdd and_ckt_0/and2_1/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1329 and_ckt_0/and2_1/a_n22_n19# and_ckt_0/a_n99_n142# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1330 and2 and_ckt_0/and2_2/a_n22_2# vdd and_ckt_0/and2_2/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1331 and2 and_ckt_0/and2_2/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1332 and_ckt_0/and2_2/a_n22_2# and_ckt_0/a_n98_232# and_ckt_0/and2_2/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1333 and_ckt_0/and2_2/a_n22_2# and_ckt_0/a_n99_n270# vdd and_ckt_0/and2_2/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1334 and_ckt_0/and2_2/a_n22_2# and_ckt_0/a_n98_232# vdd and_ckt_0/and2_2/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1335 and_ckt_0/and2_2/a_n22_n19# and_ckt_0/a_n99_n270# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1336 and3 and_ckt_0/and2_3/a_n22_2# vdd and_ckt_0/and2_3/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1337 and3 and_ckt_0/and2_3/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1338 and_ckt_0/and2_3/a_n22_2# and_ckt_0/a_n101_111# and_ckt_0/and2_3/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1339 and_ckt_0/and2_3/a_n22_2# and_ckt_0/a_n101_n391# vdd and_ckt_0/and2_3/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1340 and_ckt_0/and2_3/a_n22_2# and_ckt_0/a_n101_111# vdd and_ckt_0/and2_3/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1341 and_ckt_0/and2_3/a_n22_n19# and_ckt_0/a_n101_n391# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1342 a_eq_b and2_0/a_n22_2# vdd and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1343 a_eq_b and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1344 and2_0/a_n22_2# a_2133_973# and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1345 and2_0/a_n22_2# a_n281_6# vdd and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1346 and2_0/a_n22_2# a_2133_973# vdd and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1347 and2_0/a_n22_n19# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1348 comparator_full_ckt_0/a_n1293_591# comparator_full_ckt_0/enable_0/and2_0/a_n22_2# vdd comparator_full_ckt_0/enable_0/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1349 comparator_full_ckt_0/a_n1293_591# comparator_full_ckt_0/enable_0/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1350 comparator_full_ckt_0/enable_0/and2_0/a_n22_2# a3 comparator_full_ckt_0/enable_0/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1351 comparator_full_ckt_0/enable_0/and2_0/a_n22_2# a_n281_6# vdd comparator_full_ckt_0/enable_0/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1352 comparator_full_ckt_0/enable_0/and2_0/a_n22_2# a3 vdd comparator_full_ckt_0/enable_0/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1353 comparator_full_ckt_0/enable_0/and2_0/a_n22_n19# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1354 comparator_full_ckt_0/enable_0/a_139_50# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1355 comparator_full_ckt_0/enable_0/a_263_47# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1356 comparator_full_ckt_0/a_n1291_840# comparator_full_ckt_0/enable_0/a_139_71# vdd comparator_full_ckt_0/enable_0/w_202_62# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1357 comparator_full_ckt_0/enable_0/a_9_72# a_n281_6# vdd comparator_full_ckt_0/enable_0/w_n5_66# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1358 comparator_full_ckt_0/enable_0/a_139_71# a1 vdd comparator_full_ckt_0/enable_0/w_162_65# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1359 comparator_full_ckt_0/enable_0/a_263_68# a0 vdd comparator_full_ckt_0/enable_0/w_286_62# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1360 comparator_full_ckt_0/enable_0/a_9_72# a2 vdd comparator_full_ckt_0/enable_0/w_32_66# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1361 comparator_full_ckt_0/enable_0/a_9_51# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1362 comparator_full_ckt_0/enable_0/a_139_71# a1 comparator_full_ckt_0/enable_0/a_139_50# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1363 comparator_full_ckt_0/enable_0/a_263_68# a0 comparator_full_ckt_0/enable_0/a_263_47# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1364 comparator_full_ckt_0/enable_0/a_9_72# a2 comparator_full_ckt_0/enable_0/a_9_51# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1365 comparator_full_ckt_0/a_n1291_712# comparator_full_ckt_0/enable_0/a_9_72# vdd comparator_full_ckt_0/enable_0/w_72_63# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1366 comparator_full_ckt_0/enable_0/a_139_71# a_n281_6# vdd comparator_full_ckt_0/enable_0/w_125_65# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1367 comparator_full_ckt_0/enable_0/a_263_68# a_n281_6# vdd comparator_full_ckt_0/enable_0/w_249_62# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1368 comparator_full_ckt_0/a_n1453_n352# comparator_full_ckt_0/enable_0/a_263_68# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1369 comparator_full_ckt_0/a_n1291_712# comparator_full_ckt_0/enable_0/a_9_72# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1370 comparator_full_ckt_0/a_n1453_n352# comparator_full_ckt_0/enable_0/a_263_68# vdd comparator_full_ckt_0/enable_0/w_326_59# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1371 comparator_full_ckt_0/a_n1291_840# comparator_full_ckt_0/enable_0/a_139_71# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1372 vdd comparator_full_ckt_0/a_n1286_227# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n87_n91# comparator_full_ckt_0/equal_0/xnor_0/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1373 comparator_full_ckt_0/equal_0/xnor_0/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1374 comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n32_n3# comparator_full_ckt_0/a_n1453_n352# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1375 comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n1_n13# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n87_n91# comparator_full_ckt_0/equal_0/xnor_0/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_0/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1376 comparator_full_ckt_0/equal_0/xnor_0/m1_n107_25# comparator_full_ckt_0/a_n1453_n352# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1377 vdd comparator_full_ckt_0/a_n1453_n352# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_0/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1378 comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_31_n67# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1379 comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n87_n91# comparator_full_ckt_0/a_n1286_227# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1380 vdd comparator_full_ckt_0/a_n1453_n352# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n1_n13# comparator_full_ckt_0/equal_0/xnor_0/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1381 vdd comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_31_n13# comparator_full_ckt_0/equal_0/xnor_0/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1382 comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_31_n13# comparator_full_ckt_0/a_n1286_227# comparator_full_ckt_0/equal_0/xnor_0/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_0/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1383 comparator_full_ckt_0/equal_0/xnor_0/xor_0/a_n1_n67# comparator_full_ckt_0/a_n1286_227# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1384 comparator_full_ckt_0/equal_0/m1_n97_74# comparator_full_ckt_0/equal_0/xnor_0/m1_n107_25# vdd comparator_full_ckt_0/equal_0/xnor_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1385 comparator_full_ckt_0/equal_0/m1_n97_74# comparator_full_ckt_0/equal_0/xnor_0/m1_n107_25# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1386 vdd comparator_full_ckt_0/a_n1290_103# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n87_n91# comparator_full_ckt_0/equal_0/xnor_1/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1387 comparator_full_ckt_0/equal_0/xnor_1/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1388 comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n32_n3# comparator_full_ckt_0/a_n1291_840# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1389 comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n1_n13# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n87_n91# comparator_full_ckt_0/equal_0/xnor_1/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_1/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1390 comparator_full_ckt_0/equal_0/xnor_1/m1_n107_25# comparator_full_ckt_0/a_n1291_840# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1391 vdd comparator_full_ckt_0/a_n1291_840# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_1/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1392 comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_31_n67# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1393 comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n87_n91# comparator_full_ckt_0/a_n1290_103# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1394 vdd comparator_full_ckt_0/a_n1291_840# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n1_n13# comparator_full_ckt_0/equal_0/xnor_1/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1395 vdd comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_31_n13# comparator_full_ckt_0/equal_0/xnor_1/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1396 comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_31_n13# comparator_full_ckt_0/a_n1290_103# comparator_full_ckt_0/equal_0/xnor_1/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_1/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1397 comparator_full_ckt_0/equal_0/xnor_1/xor_0/a_n1_n67# comparator_full_ckt_0/a_n1290_103# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1398 comparator_full_ckt_0/m1_n700_318# comparator_full_ckt_0/equal_0/xnor_1/m1_n107_25# vdd comparator_full_ckt_0/equal_0/xnor_1/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1399 comparator_full_ckt_0/m1_n700_318# comparator_full_ckt_0/equal_0/xnor_1/m1_n107_25# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1400 vdd comparator_full_ckt_0/a_n1292_n147# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n87_n91# comparator_full_ckt_0/equal_0/xnor_3/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1401 comparator_full_ckt_0/equal_0/xnor_3/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1402 comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n32_n3# comparator_full_ckt_0/a_n1293_591# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1403 comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n1_n13# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n87_n91# comparator_full_ckt_0/equal_0/xnor_3/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_3/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1404 comparator_full_ckt_0/equal_0/xnor_3/m1_n107_25# comparator_full_ckt_0/a_n1293_591# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1405 vdd comparator_full_ckt_0/a_n1293_591# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_3/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1406 comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_31_n67# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1407 comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n87_n91# comparator_full_ckt_0/a_n1292_n147# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1408 vdd comparator_full_ckt_0/a_n1293_591# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n1_n13# comparator_full_ckt_0/equal_0/xnor_3/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1409 vdd comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_31_n13# comparator_full_ckt_0/equal_0/xnor_3/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1410 comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_31_n13# comparator_full_ckt_0/a_n1292_n147# comparator_full_ckt_0/equal_0/xnor_3/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_3/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1411 comparator_full_ckt_0/equal_0/xnor_3/xor_0/a_n1_n67# comparator_full_ckt_0/a_n1292_n147# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1412 comparator_full_ckt_0/m1_n970_633# comparator_full_ckt_0/equal_0/xnor_3/m1_n107_25# vdd comparator_full_ckt_0/equal_0/xnor_3/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1413 comparator_full_ckt_0/m1_n970_633# comparator_full_ckt_0/equal_0/xnor_3/m1_n107_25# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1414 vdd comparator_full_ckt_0/a_n1289_n26# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n87_n91# comparator_full_ckt_0/equal_0/xnor_2/xor_0/w_n39_n58# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1415 comparator_full_ckt_0/equal_0/xnor_2/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_31_n67# Gnd CMOSN w=4 l=2
++  ad=48 pd=40 as=48 ps=40
+M1416 comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n32_n3# comparator_full_ckt_0/a_n1291_712# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1417 comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n1_n13# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n87_n91# comparator_full_ckt_0/equal_0/xnor_2/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_2/xor_0/w_n8_n27# CMOSP w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1418 comparator_full_ckt_0/equal_0/xnor_2/m1_n107_25# comparator_full_ckt_0/a_n1291_712# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n1_n67# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=44 ps=38
+M1419 vdd comparator_full_ckt_0/a_n1291_712# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_2/xor_0/w_n39_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=40 ps=26
+M1420 comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_31_n67# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n87_n91# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1421 comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n87_n91# comparator_full_ckt_0/a_n1289_n26# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1422 vdd comparator_full_ckt_0/a_n1291_712# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n1_n13# comparator_full_ckt_0/equal_0/xnor_2/xor_0/w_n8_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1423 vdd comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n32_n3# comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_31_n13# comparator_full_ckt_0/equal_0/xnor_2/xor_0/w_24_8# CMOSP w=8 l=2
++  ad=0 pd=0 as=80 ps=52
+M1424 comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_31_n13# comparator_full_ckt_0/a_n1289_n26# comparator_full_ckt_0/equal_0/xnor_2/m1_n107_25# comparator_full_ckt_0/equal_0/xnor_2/xor_0/w_24_n27# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1425 comparator_full_ckt_0/equal_0/xnor_2/xor_0/a_n1_n67# comparator_full_ckt_0/a_n1289_n26# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1426 comparator_full_ckt_0/m1_n701_283# comparator_full_ckt_0/equal_0/xnor_2/m1_n107_25# vdd comparator_full_ckt_0/equal_0/xnor_2/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1427 comparator_full_ckt_0/m1_n701_283# comparator_full_ckt_0/equal_0/xnor_2/m1_n107_25# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1428 a_2133_973# comparator_full_ckt_0/equal_0/and4_0/a_n26_4# vdd comparator_full_ckt_0/equal_0/and4_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1429 a_2133_973# comparator_full_ckt_0/equal_0/and4_0/a_n26_4# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1430 comparator_full_ckt_0/equal_0/and4_0/a_11_n16# comparator_full_ckt_0/m1_n701_283# comparator_full_ckt_0/equal_0/and4_0/a_n26_n16# Gnd CMOSN w=4 l=2
++  ad=136 pd=76 as=140 ps=78
+M1431 comparator_full_ckt_0/equal_0/and4_0/a_n26_4# comparator_full_ckt_0/equal_0/m1_n97_74# vdd comparator_full_ckt_0/equal_0/and4_0/w_71_n2# CMOSP w=8 l=2
++  ad=160 pd=104 as=0 ps=0
+M1432 comparator_full_ckt_0/equal_0/and4_0/a_n26_4# comparator_full_ckt_0/m1_n700_318# vdd comparator_full_ckt_0/equal_0/and4_0/w_33_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1433 comparator_full_ckt_0/equal_0/and4_0/a_n26_4# comparator_full_ckt_0/m1_n970_633# vdd comparator_full_ckt_0/equal_0/and4_0/w_n40_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1434 comparator_full_ckt_0/equal_0/and4_0/a_47_n16# comparator_full_ckt_0/m1_n700_318# comparator_full_ckt_0/equal_0/and4_0/a_11_n16# Gnd CMOSN w=4 l=2
++  ad=144 pd=80 as=0 ps=0
+M1435 comparator_full_ckt_0/equal_0/and4_0/a_n26_n16# comparator_full_ckt_0/m1_n970_633# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1436 comparator_full_ckt_0/equal_0/and4_0/a_n26_4# comparator_full_ckt_0/equal_0/m1_n97_74# comparator_full_ckt_0/equal_0/and4_0/a_47_n16# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1437 comparator_full_ckt_0/equal_0/and4_0/a_n26_4# comparator_full_ckt_0/m1_n701_283# vdd comparator_full_ckt_0/equal_0/and4_0/w_n3_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1438 comparator_full_ckt_0/a_n1292_n147# comparator_full_ckt_0/enable_1/and2_0/a_n22_2# vdd comparator_full_ckt_0/enable_1/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1439 comparator_full_ckt_0/a_n1292_n147# comparator_full_ckt_0/enable_1/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1440 comparator_full_ckt_0/enable_1/and2_0/a_n22_2# b3 comparator_full_ckt_0/enable_1/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1441 comparator_full_ckt_0/enable_1/and2_0/a_n22_2# a_n281_6# vdd comparator_full_ckt_0/enable_1/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1442 comparator_full_ckt_0/enable_1/and2_0/a_n22_2# b3 vdd comparator_full_ckt_0/enable_1/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1443 comparator_full_ckt_0/enable_1/and2_0/a_n22_n19# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1444 comparator_full_ckt_0/enable_1/a_139_50# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1445 comparator_full_ckt_0/enable_1/a_263_47# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1446 comparator_full_ckt_0/a_n1290_103# comparator_full_ckt_0/enable_1/a_139_71# vdd comparator_full_ckt_0/enable_1/w_202_62# CMOSP w=8 l=2
++  ad=65 pd=46 as=0 ps=0
+M1447 comparator_full_ckt_0/enable_1/a_9_72# a_n281_6# vdd comparator_full_ckt_0/enable_1/w_n5_66# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1448 comparator_full_ckt_0/enable_1/a_139_71# b1 vdd comparator_full_ckt_0/enable_1/w_162_65# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1449 comparator_full_ckt_0/enable_1/a_263_68# b0 vdd comparator_full_ckt_0/enable_1/w_286_62# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1450 comparator_full_ckt_0/enable_1/a_9_72# b2 vdd comparator_full_ckt_0/enable_1/w_32_66# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1451 comparator_full_ckt_0/enable_1/a_9_51# a_n281_6# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1452 comparator_full_ckt_0/enable_1/a_139_71# b1 comparator_full_ckt_0/enable_1/a_139_50# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1453 comparator_full_ckt_0/enable_1/a_263_68# b0 comparator_full_ckt_0/enable_1/a_263_47# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1454 comparator_full_ckt_0/enable_1/a_9_72# b2 comparator_full_ckt_0/enable_1/a_9_51# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1455 comparator_full_ckt_0/a_n1289_n26# comparator_full_ckt_0/enable_1/a_9_72# vdd comparator_full_ckt_0/enable_1/w_72_63# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1456 comparator_full_ckt_0/enable_1/a_139_71# a_n281_6# vdd comparator_full_ckt_0/enable_1/w_125_65# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1457 comparator_full_ckt_0/enable_1/a_263_68# a_n281_6# vdd comparator_full_ckt_0/enable_1/w_249_62# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1458 comparator_full_ckt_0/a_n1286_227# comparator_full_ckt_0/enable_1/a_263_68# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1459 comparator_full_ckt_0/a_n1289_n26# comparator_full_ckt_0/enable_1/a_9_72# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1460 comparator_full_ckt_0/a_n1286_227# comparator_full_ckt_0/enable_1/a_263_68# vdd comparator_full_ckt_0/enable_1/w_326_59# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1461 comparator_full_ckt_0/a_n1290_103# comparator_full_ckt_0/enable_1/a_139_71# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1462 a_gr_b comparator_full_ckt_0/comparator_0/or4_0/a_n12_n10# vdd comparator_full_ckt_0/comparator_0/or4_0/w_54_6# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1463 comparator_full_ckt_0/comparator_0/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_0/a_n248_0# gnd Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=0 ps=0
+M1464 comparator_full_ckt_0/comparator_0/or4_0/a_4_12# comparator_full_ckt_0/comparator_0/a_n96_0# comparator_full_ckt_0/comparator_0/or4_0/a_n12_12# comparator_full_ckt_0/comparator_0/or4_0/w_n26_6# CMOSP w=8 l=2
++  ad=112 pd=44 as=112 ps=44
+M1465 a_gr_b comparator_full_ckt_0/comparator_0/or4_0/a_n12_n10# gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1466 comparator_full_ckt_0/comparator_0/or4_0/a_n12_12# comparator_full_ckt_0/comparator_0/a_115_0# vdd comparator_full_ckt_0/comparator_0/or4_0/w_n26_6# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1467 comparator_full_ckt_0/comparator_0/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_0/a_n376_0# comparator_full_ckt_0/comparator_0/or4_0/a_20_12# comparator_full_ckt_0/comparator_0/or4_0/w_n26_6# CMOSP w=8 l=2
++  ad=40 pd=26 as=112 ps=44
+M1468 comparator_full_ckt_0/comparator_0/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_0/a_n96_0# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1469 comparator_full_ckt_0/comparator_0/or4_0/a_20_12# comparator_full_ckt_0/comparator_0/a_n248_0# comparator_full_ckt_0/comparator_0/or4_0/a_4_12# comparator_full_ckt_0/comparator_0/or4_0/w_n26_6# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1470 comparator_full_ckt_0/comparator_0/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_0/a_115_0# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1471 comparator_full_ckt_0/comparator_0/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_0/a_n376_0# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1472 comparator_full_ckt_0/comparator_0/a_115_0# comparator_full_ckt_0/comparator_0/and5_0/a_1_n8# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1473 comparator_full_ckt_0/comparator_0/and5_0/a_1_n8# comparator_full_ckt_0/m1_n700_318# vdd comparator_full_ckt_0/comparator_0/and5_0/w_138_n14# CMOSP w=8 l=2
++  ad=200 pd=130 as=0 ps=0
+M1474 comparator_full_ckt_0/comparator_0/a_115_0# comparator_full_ckt_0/comparator_0/and5_0/a_1_n8# vdd comparator_full_ckt_0/comparator_0/and5_0/w_171_n14# CMOSP w=7 l=2
++  ad=35 pd=24 as=0 ps=0
+M1475 comparator_full_ckt_0/comparator_0/and5_0/a_39_n29# comparator_full_ckt_0/comparator_0/a_207_n65# comparator_full_ckt_0/comparator_0/and5_0/a_1_n29# Gnd CMOSN w=4 l=2
++  ad=144 pd=80 as=144 ps=80
+M1476 comparator_full_ckt_0/comparator_0/and5_0/a_1_n29# comparator_full_ckt_0/m1_n970_633# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1477 comparator_full_ckt_0/comparator_0/and5_0/a_1_n8# comparator_full_ckt_0/a_n1286_227# vdd comparator_full_ckt_0/comparator_0/and5_0/w_64_n14# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1478 comparator_full_ckt_0/comparator_0/and5_0/a_113_n29# comparator_full_ckt_0/m1_n701_283# comparator_full_ckt_0/comparator_0/and5_0/a_77_n29# Gnd CMOSN w=4 l=2
++  ad=144 pd=80 as=136 ps=76
+M1479 comparator_full_ckt_0/comparator_0/and5_0/a_1_n8# comparator_full_ckt_0/m1_n700_318# comparator_full_ckt_0/comparator_0/and5_0/a_113_n29# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1480 comparator_full_ckt_0/comparator_0/and5_0/a_1_n8# comparator_full_ckt_0/m1_n701_283# vdd comparator_full_ckt_0/comparator_0/and5_0/w_100_n14# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1481 comparator_full_ckt_0/comparator_0/and5_0/a_77_n29# comparator_full_ckt_0/a_n1286_227# comparator_full_ckt_0/comparator_0/and5_0/a_39_n29# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1482 comparator_full_ckt_0/comparator_0/and5_0/a_1_n8# comparator_full_ckt_0/m1_n970_633# vdd comparator_full_ckt_0/comparator_0/and5_0/w_n12_n14# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1483 comparator_full_ckt_0/comparator_0/and5_0/a_1_n8# comparator_full_ckt_0/comparator_0/a_207_n65# vdd comparator_full_ckt_0/comparator_0/and5_0/w_26_n14# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1484 comparator_full_ckt_0/comparator_0/a_n248_0# comparator_full_ckt_0/comparator_0/and3_0/a_n19_n1# vdd comparator_full_ckt_0/comparator_0/and3_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1485 comparator_full_ckt_0/comparator_0/a_n248_0# comparator_full_ckt_0/comparator_0/and3_0/a_n19_n1# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1486 comparator_full_ckt_0/comparator_0/and3_0/a_n19_n1# comparator_full_ckt_0/comparator_0/a_n172_n64# vdd comparator_full_ckt_0/comparator_0/and3_0/w_5_n8# CMOSP w=8 l=2
++  ad=120 pd=78 as=0 ps=0
+M1487 comparator_full_ckt_0/comparator_0/and3_0/a_n19_n26# comparator_full_ckt_0/m1_n970_633# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1488 comparator_full_ckt_0/comparator_0/and3_0/a_n19_n1# comparator_full_ckt_0/a_n1291_712# comparator_full_ckt_0/comparator_0/and3_0/a_18_n26# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=136 ps=76
+M1489 comparator_full_ckt_0/comparator_0/and3_0/a_n19_n1# comparator_full_ckt_0/a_n1291_712# vdd comparator_full_ckt_0/comparator_0/and3_0/w_41_n8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1490 comparator_full_ckt_0/comparator_0/and3_0/a_n19_n1# comparator_full_ckt_0/m1_n970_633# vdd comparator_full_ckt_0/comparator_0/and3_0/w_n32_n8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1491 comparator_full_ckt_0/comparator_0/and3_0/a_18_n26# comparator_full_ckt_0/comparator_0/a_n172_n64# comparator_full_ckt_0/comparator_0/and3_0/a_n19_n26# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1492 comparator_full_ckt_0/comparator_0/m1_n298_n52# comparator_full_ckt_0/a_n1292_n147# vdd comparator_full_ckt_0/comparator_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1493 comparator_full_ckt_0/comparator_0/m1_n298_n52# comparator_full_ckt_0/a_n1292_n147# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1494 comparator_full_ckt_0/comparator_0/a_n96_0# comparator_full_ckt_0/comparator_0/and4_0/a_n26_4# vdd comparator_full_ckt_0/comparator_0/and4_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1495 comparator_full_ckt_0/comparator_0/a_n96_0# comparator_full_ckt_0/comparator_0/and4_0/a_n26_4# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1496 comparator_full_ckt_0/comparator_0/and4_0/a_11_n16# comparator_full_ckt_0/comparator_0/a_6_n61# comparator_full_ckt_0/comparator_0/and4_0/a_n26_n16# Gnd CMOSN w=4 l=2
++  ad=136 pd=76 as=140 ps=78
+M1497 comparator_full_ckt_0/comparator_0/and4_0/a_n26_4# comparator_full_ckt_0/m1_n970_633# vdd comparator_full_ckt_0/comparator_0/and4_0/w_71_n2# CMOSP w=8 l=2
++  ad=160 pd=104 as=0 ps=0
+M1498 comparator_full_ckt_0/comparator_0/and4_0/a_n26_4# comparator_full_ckt_0/m1_n701_283# vdd comparator_full_ckt_0/comparator_0/and4_0/w_33_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1499 comparator_full_ckt_0/comparator_0/and4_0/a_n26_4# comparator_full_ckt_0/a_n1290_103# vdd comparator_full_ckt_0/comparator_0/and4_0/w_n40_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1500 comparator_full_ckt_0/comparator_0/and4_0/a_47_n16# comparator_full_ckt_0/m1_n701_283# comparator_full_ckt_0/comparator_0/and4_0/a_11_n16# Gnd CMOSN w=4 l=2
++  ad=144 pd=80 as=0 ps=0
+M1501 comparator_full_ckt_0/comparator_0/and4_0/a_n26_n16# comparator_full_ckt_0/a_n1290_103# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1502 comparator_full_ckt_0/comparator_0/and4_0/a_n26_4# comparator_full_ckt_0/m1_n970_633# comparator_full_ckt_0/comparator_0/and4_0/a_47_n16# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1503 comparator_full_ckt_0/comparator_0/and4_0/a_n26_4# comparator_full_ckt_0/comparator_0/a_6_n61# vdd comparator_full_ckt_0/comparator_0/and4_0/w_n3_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1504 comparator_full_ckt_0/comparator_0/a_n376_0# comparator_full_ckt_0/comparator_0/and2_0/a_n22_2# vdd comparator_full_ckt_0/comparator_0/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1505 comparator_full_ckt_0/comparator_0/a_n376_0# comparator_full_ckt_0/comparator_0/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1506 comparator_full_ckt_0/comparator_0/and2_0/a_n22_2# comparator_full_ckt_0/a_n1293_591# comparator_full_ckt_0/comparator_0/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1507 comparator_full_ckt_0/comparator_0/and2_0/a_n22_2# comparator_full_ckt_0/comparator_0/m1_n298_n52# vdd comparator_full_ckt_0/comparator_0/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1508 comparator_full_ckt_0/comparator_0/and2_0/a_n22_2# comparator_full_ckt_0/a_n1293_591# vdd comparator_full_ckt_0/comparator_0/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1509 comparator_full_ckt_0/comparator_0/and2_0/a_n22_n19# comparator_full_ckt_0/comparator_0/m1_n298_n52# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1510 comparator_full_ckt_0/comparator_0/a_207_n65# comparator_full_ckt_0/a_n1453_n352# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1511 comparator_full_ckt_0/comparator_0/a_n172_n64# comparator_full_ckt_0/a_n1289_n26# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1512 comparator_full_ckt_0/comparator_0/a_6_n61# comparator_full_ckt_0/a_n1291_840# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1513 comparator_full_ckt_0/comparator_0/a_n172_n64# comparator_full_ckt_0/a_n1289_n26# vdd comparator_full_ckt_0/comparator_0/w_n181_n77# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1514 comparator_full_ckt_0/comparator_0/a_6_n61# comparator_full_ckt_0/a_n1291_840# vdd comparator_full_ckt_0/comparator_0/w_n3_n74# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1515 comparator_full_ckt_0/comparator_0/a_207_n65# comparator_full_ckt_0/a_n1453_n352# vdd comparator_full_ckt_0/comparator_0/w_198_n78# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1516 b_gr_a comparator_full_ckt_0/comparator_1/or4_0/a_n12_n10# vdd comparator_full_ckt_0/comparator_1/or4_0/w_54_6# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1517 comparator_full_ckt_0/comparator_1/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_1/a_n248_0# gnd Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=0 ps=0
+M1518 comparator_full_ckt_0/comparator_1/or4_0/a_4_12# comparator_full_ckt_0/comparator_1/a_n96_0# comparator_full_ckt_0/comparator_1/or4_0/a_n12_12# comparator_full_ckt_0/comparator_1/or4_0/w_n26_6# CMOSP w=8 l=2
++  ad=112 pd=44 as=112 ps=44
+M1519 b_gr_a comparator_full_ckt_0/comparator_1/or4_0/a_n12_n10# gnd Gnd CMOSN w=5 l=2
++  ad=25 pd=20 as=0 ps=0
+M1520 comparator_full_ckt_0/comparator_1/or4_0/a_n12_12# comparator_full_ckt_0/comparator_1/a_115_0# vdd comparator_full_ckt_0/comparator_1/or4_0/w_n26_6# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1521 comparator_full_ckt_0/comparator_1/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_1/a_n376_0# comparator_full_ckt_0/comparator_1/or4_0/a_20_12# comparator_full_ckt_0/comparator_1/or4_0/w_n26_6# CMOSP w=8 l=2
++  ad=40 pd=26 as=112 ps=44
+M1522 comparator_full_ckt_0/comparator_1/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_1/a_n96_0# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1523 comparator_full_ckt_0/comparator_1/or4_0/a_20_12# comparator_full_ckt_0/comparator_1/a_n248_0# comparator_full_ckt_0/comparator_1/or4_0/a_4_12# comparator_full_ckt_0/comparator_1/or4_0/w_n26_6# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1524 comparator_full_ckt_0/comparator_1/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_1/a_115_0# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1525 comparator_full_ckt_0/comparator_1/or4_0/a_n12_n10# comparator_full_ckt_0/comparator_1/a_n376_0# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1526 comparator_full_ckt_0/comparator_1/a_115_0# comparator_full_ckt_0/comparator_1/and5_0/a_1_n8# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1527 comparator_full_ckt_0/comparator_1/and5_0/a_1_n8# comparator_full_ckt_0/a_n1286_227# vdd comparator_full_ckt_0/comparator_1/and5_0/w_138_n14# CMOSP w=8 l=2
++  ad=200 pd=130 as=0 ps=0
+M1528 comparator_full_ckt_0/comparator_1/a_115_0# comparator_full_ckt_0/comparator_1/and5_0/a_1_n8# vdd comparator_full_ckt_0/comparator_1/and5_0/w_171_n14# CMOSP w=7 l=2
++  ad=35 pd=24 as=0 ps=0
+M1529 comparator_full_ckt_0/comparator_1/and5_0/a_39_n29# comparator_full_ckt_0/comparator_1/a_207_n65# comparator_full_ckt_0/comparator_1/and5_0/a_1_n29# Gnd CMOSN w=4 l=2
++  ad=144 pd=80 as=144 ps=80
+M1530 comparator_full_ckt_0/comparator_1/and5_0/a_1_n29# comparator_full_ckt_0/m1_n970_633# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1531 comparator_full_ckt_0/comparator_1/and5_0/a_1_n8# comparator_full_ckt_0/m1_n700_318# vdd comparator_full_ckt_0/comparator_1/and5_0/w_64_n14# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1532 comparator_full_ckt_0/comparator_1/and5_0/a_113_n29# comparator_full_ckt_0/m1_n701_283# comparator_full_ckt_0/comparator_1/and5_0/a_77_n29# Gnd CMOSN w=4 l=2
++  ad=144 pd=80 as=136 ps=76
+M1533 comparator_full_ckt_0/comparator_1/and5_0/a_1_n8# comparator_full_ckt_0/a_n1286_227# comparator_full_ckt_0/comparator_1/and5_0/a_113_n29# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1534 comparator_full_ckt_0/comparator_1/and5_0/a_1_n8# comparator_full_ckt_0/m1_n701_283# vdd comparator_full_ckt_0/comparator_1/and5_0/w_100_n14# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1535 comparator_full_ckt_0/comparator_1/and5_0/a_77_n29# comparator_full_ckt_0/m1_n700_318# comparator_full_ckt_0/comparator_1/and5_0/a_39_n29# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1536 comparator_full_ckt_0/comparator_1/and5_0/a_1_n8# comparator_full_ckt_0/m1_n970_633# vdd comparator_full_ckt_0/comparator_1/and5_0/w_n12_n14# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1537 comparator_full_ckt_0/comparator_1/and5_0/a_1_n8# comparator_full_ckt_0/comparator_1/a_207_n65# vdd comparator_full_ckt_0/comparator_1/and5_0/w_26_n14# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1538 comparator_full_ckt_0/comparator_1/a_n248_0# comparator_full_ckt_0/comparator_1/and3_0/a_n19_n1# vdd comparator_full_ckt_0/comparator_1/and3_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1539 comparator_full_ckt_0/comparator_1/a_n248_0# comparator_full_ckt_0/comparator_1/and3_0/a_n19_n1# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1540 comparator_full_ckt_0/comparator_1/and3_0/a_n19_n1# comparator_full_ckt_0/comparator_1/a_n172_n64# vdd comparator_full_ckt_0/comparator_1/and3_0/w_5_n8# CMOSP w=8 l=2
++  ad=120 pd=78 as=0 ps=0
+M1541 comparator_full_ckt_0/comparator_1/and3_0/a_n19_n26# comparator_full_ckt_0/m1_n970_633# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1542 comparator_full_ckt_0/comparator_1/and3_0/a_n19_n1# comparator_full_ckt_0/a_n1289_n26# comparator_full_ckt_0/comparator_1/and3_0/a_18_n26# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=136 ps=76
+M1543 comparator_full_ckt_0/comparator_1/and3_0/a_n19_n1# comparator_full_ckt_0/a_n1289_n26# vdd comparator_full_ckt_0/comparator_1/and3_0/w_41_n8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1544 comparator_full_ckt_0/comparator_1/and3_0/a_n19_n1# comparator_full_ckt_0/m1_n970_633# vdd comparator_full_ckt_0/comparator_1/and3_0/w_n32_n8# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1545 comparator_full_ckt_0/comparator_1/and3_0/a_18_n26# comparator_full_ckt_0/comparator_1/a_n172_n64# comparator_full_ckt_0/comparator_1/and3_0/a_n19_n26# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1546 comparator_full_ckt_0/comparator_1/m1_n298_n52# comparator_full_ckt_0/a_n1293_591# vdd comparator_full_ckt_0/comparator_1/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1547 comparator_full_ckt_0/comparator_1/m1_n298_n52# comparator_full_ckt_0/a_n1293_591# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1548 comparator_full_ckt_0/comparator_1/a_n96_0# comparator_full_ckt_0/comparator_1/and4_0/a_n26_4# vdd comparator_full_ckt_0/comparator_1/and4_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1549 comparator_full_ckt_0/comparator_1/a_n96_0# comparator_full_ckt_0/comparator_1/and4_0/a_n26_4# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1550 comparator_full_ckt_0/comparator_1/and4_0/a_11_n16# comparator_full_ckt_0/comparator_1/a_6_n61# comparator_full_ckt_0/comparator_1/and4_0/a_n26_n16# Gnd CMOSN w=4 l=2
++  ad=136 pd=76 as=140 ps=78
+M1551 comparator_full_ckt_0/comparator_1/and4_0/a_n26_4# comparator_full_ckt_0/m1_n970_633# vdd comparator_full_ckt_0/comparator_1/and4_0/w_71_n2# CMOSP w=8 l=2
++  ad=160 pd=104 as=0 ps=0
+M1552 comparator_full_ckt_0/comparator_1/and4_0/a_n26_4# comparator_full_ckt_0/m1_n701_283# vdd comparator_full_ckt_0/comparator_1/and4_0/w_33_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1553 comparator_full_ckt_0/comparator_1/and4_0/a_n26_4# comparator_full_ckt_0/a_n1291_840# vdd comparator_full_ckt_0/comparator_1/and4_0/w_n40_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1554 comparator_full_ckt_0/comparator_1/and4_0/a_47_n16# comparator_full_ckt_0/m1_n701_283# comparator_full_ckt_0/comparator_1/and4_0/a_11_n16# Gnd CMOSN w=4 l=2
++  ad=144 pd=80 as=0 ps=0
+M1555 comparator_full_ckt_0/comparator_1/and4_0/a_n26_n16# comparator_full_ckt_0/a_n1291_840# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1556 comparator_full_ckt_0/comparator_1/and4_0/a_n26_4# comparator_full_ckt_0/m1_n970_633# comparator_full_ckt_0/comparator_1/and4_0/a_47_n16# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1557 comparator_full_ckt_0/comparator_1/and4_0/a_n26_4# comparator_full_ckt_0/comparator_1/a_6_n61# vdd comparator_full_ckt_0/comparator_1/and4_0/w_n3_n2# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1558 comparator_full_ckt_0/comparator_1/a_n376_0# comparator_full_ckt_0/comparator_1/and2_0/a_n22_2# vdd comparator_full_ckt_0/comparator_1/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1559 comparator_full_ckt_0/comparator_1/a_n376_0# comparator_full_ckt_0/comparator_1/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1560 comparator_full_ckt_0/comparator_1/and2_0/a_n22_2# comparator_full_ckt_0/a_n1292_n147# comparator_full_ckt_0/comparator_1/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1561 comparator_full_ckt_0/comparator_1/and2_0/a_n22_2# comparator_full_ckt_0/comparator_1/m1_n298_n52# vdd comparator_full_ckt_0/comparator_1/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1562 comparator_full_ckt_0/comparator_1/and2_0/a_n22_2# comparator_full_ckt_0/a_n1292_n147# vdd comparator_full_ckt_0/comparator_1/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1563 comparator_full_ckt_0/comparator_1/and2_0/a_n22_n19# comparator_full_ckt_0/comparator_1/m1_n298_n52# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1564 comparator_full_ckt_0/comparator_1/a_207_n65# comparator_full_ckt_0/a_n1453_n352# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1565 comparator_full_ckt_0/comparator_1/a_n172_n64# comparator_full_ckt_0/a_n1291_712# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1566 comparator_full_ckt_0/comparator_1/a_6_n61# comparator_full_ckt_0/a_n1290_103# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1567 comparator_full_ckt_0/comparator_1/a_n172_n64# comparator_full_ckt_0/a_n1291_712# vdd comparator_full_ckt_0/comparator_1/w_n181_n77# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1568 comparator_full_ckt_0/comparator_1/a_6_n61# comparator_full_ckt_0/a_n1290_103# vdd comparator_full_ckt_0/comparator_1/w_n3_n74# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1569 comparator_full_ckt_0/comparator_1/a_207_n65# comparator_full_ckt_0/a_n1453_n352# vdd comparator_full_ckt_0/comparator_1/w_198_n78# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1570 decoder_0/a_n211_80# S1 vdd decoder_0/w_n82_99# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1571 decoder_0/a_n211_80# S1 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1572 decoder_0/a_n174_69# S0 vdd decoder_0/w_55_95# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1573 decoder_0/a_n174_69# S0 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1574 a_n276_n104# decoder_0/and2_0/a_n22_2# vdd decoder_0/and2_0/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1575 a_n276_n104# decoder_0/and2_0/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1576 decoder_0/and2_0/a_n22_2# decoder_0/a_n174_69# decoder_0/and2_0/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1577 decoder_0/and2_0/a_n22_2# decoder_0/a_n211_80# vdd decoder_0/and2_0/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1578 decoder_0/and2_0/a_n22_2# decoder_0/a_n174_69# vdd decoder_0/and2_0/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1579 decoder_0/and2_0/a_n22_n19# decoder_0/a_n211_80# gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1580 a_n281_6# decoder_0/and2_1/a_n22_2# vdd decoder_0/and2_1/not_0/w_n12_n9# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1581 a_n281_6# decoder_0/and2_1/a_n22_2# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1582 decoder_0/and2_1/a_n22_2# decoder_0/a_n174_69# decoder_0/and2_1/a_n22_n19# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=140 ps=78
+M1583 decoder_0/and2_1/a_n22_2# S1 vdd decoder_0/and2_1/w_n36_n4# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1584 decoder_0/and2_1/a_n22_2# decoder_0/a_n174_69# vdd decoder_0/and2_1/w_1_n4# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1585 decoder_0/and2_1/a_n22_n19# S1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1586 a_n279_241# decoder_0/a_140_35# vdd decoder_0/w_203_26# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1587 decoder_0/a_19_14# decoder_0/a_n211_80# gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1588 decoder_0/a_140_14# S0 gnd Gnd CMOSN w=4 l=2
++  ad=140 pd=78 as=0 ps=0
+M1589 decoder_0/a_19_35# S0 vdd decoder_0/w_42_29# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1590 decoder_0/a_140_35# S1 vdd decoder_0/w_163_29# CMOSP w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1591 decoder_0/a_19_35# S0 decoder_0/a_19_14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1592 decoder_0/a_140_35# S1 decoder_0/a_140_14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1593 a_n281_120# decoder_0/a_19_35# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1594 a_n281_120# decoder_0/a_19_35# vdd decoder_0/w_82_26# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1595 a_n279_241# decoder_0/a_140_35# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1596 decoder_0/a_19_35# decoder_0/a_n211_80# vdd decoder_0/w_5_29# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1597 decoder_0/a_140_35# S0 vdd decoder_0/w_126_29# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 adder_sub_0/m1_n35_n310# adder_sub_0/a_n219_233# 4.61fF
+C1 adder_sub_0/m1_n70_n739# adder_sub_0/a_n225_n140# 4.61fF
+C2 gnd vdd 3.16fF
+C3 adder_sub_0/m1_n55_n594# adder_sub_0/a_n223_n19# 4.61fF
+C4 adder_sub_0/m1_n52_n451# adder_sub_0/a_n223_109# 4.61fF
+C5 comparator_full_ckt_0/a_n1289_n26# Gnd 3.03fF
+C6 comparator_full_ckt_0/m1_n970_633# Gnd 20.30fF
+C7 comparator_full_ckt_0/a_n1286_227# Gnd 3.50fF
+C8 a_n281_6# Gnd 7.77fF
+C9 comparator_full_ckt_0/a_n1292_n147# Gnd 3.43fF
+C10 comparator_full_ckt_0/m1_n701_283# Gnd 9.27fF
+C11 comparator_full_ckt_0/a_n1291_712# Gnd 2.81fF
+C12 comparator_full_ckt_0/a_n1293_591# Gnd 3.45fF
+C13 comparator_full_ckt_0/m1_n700_318# Gnd 2.09fF
+C14 comparator_full_ckt_0/a_n1290_103# Gnd 3.71fF
+C15 comparator_full_ckt_0/a_n1453_n352# Gnd 25.40fF
+C16 a_n279_241# Gnd 5.53fF
+C17 vdd Gnd 39.34fF
+C18 adder_sub_0/a_n219_n281# Gnd 2.17fF
+C19 adder_sub_0/a_n223_n533# Gnd 2.21fF
+C20 b0 Gnd 23.19fF
+C21 b1 Gnd 23.16fF
+C22 b2 Gnd 23.48fF
+C23 b3 Gnd 17.69fF
+C24 m1_n97_n30# Gnd 5.36fF
+C25 adder_sub_0/a_n225_n654# Gnd 2.06fF
+C26 a0 Gnd 40.61fF
+C27 a1 Gnd 11.82fF
+C28 a2 Gnd 11.34fF
+C29 adder_sub_0/a_n225_n140# Gnd 2.96fF
+C30 adder_sub_0/m2_292_n883# Gnd 14.04fF
+C31 adder_sub_0/a_n223_n19# Gnd 3.28fF
+C32 adder_sub_0/m2_295_n561# Gnd 13.93fF
+C33 adder_sub_0/a_n223_109# Gnd 3.27fF
+C34 gnd Gnd 68.51fF
+C35 adder_sub_0/m2_301_n241# Gnd 13.64fF
+C36 adder_sub_0/a_n219_233# Gnd 3.25fF
+
+
+.tran 1n 200n
+*target text
+.control
+run
+
+plot v(and0) v(and1)+2 v(and2)+4 v(and3)+6 v(s0)+8 v(s1)+10
+plot v(sum0) v(sum1)+2 v(sum2)+4 v(sum3)+6 v(carry)+8 v(s0)+10 v(s1)+12
+plot v(a_gr_b) v(a_eq_b)+2 v(b_gr_a)+4 v(s0)+6 v(s1)+8
+quit
+.endc
+.end

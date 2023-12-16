@@ -1,0 +1,34 @@
+magic
+tech scmos
+timestamp 1700594004
+<< polysilicon >>
+rect -54 91 -40 93
+rect -187 66 -175 68
+rect -42 53 -40 91
+rect -42 51 -34 53
+rect -179 -12 -167 -10
+<< polycontact >>
+rect -58 91 -54 95
+rect -34 50 -30 54
+<< metal1 >>
+rect -11 23 2 26
+rect -40 5 -32 9
+rect -40 -25 -36 5
+rect -85 -29 -36 -25
+<< m2contact >>
+rect -107 25 -102 30
+rect -37 21 -32 26
+<< metal2 >>
+rect -106 14 -103 25
+rect -45 22 -37 25
+rect -45 14 -42 22
+rect -106 11 -42 14
+use xor  xor_0
+timestamp 1700473259
+transform 1 0 -118 0 1 58
+box -87 -91 75 47
+use not  not_0
+timestamp 1700473189
+transform 1 0 -21 0 1 39
+box -12 -33 12 15
+<< end >>

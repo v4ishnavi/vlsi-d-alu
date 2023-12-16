@@ -1,0 +1,228 @@
+ALU ckt 
+.include TSMC_180nm.txt
+.include NAND.sub
+.include NOT.sub
+.include NOR.sub
+.include XOR.sub
+.include XNOR.sub
+.include AND3.sub
+.include AND4.sub
+.include AND5.sub
+.include OR4.sub
+ *Define AND, OR, XOR, XNOR using NAND
+.param SUPPLY = 1.8
+.param LAMBDA = 0.18u
+
+.param wn1 = {10*LAMBDA}
+.param wn2 = {10*LAMBDA}
+.param ln1 = {2*LAMBDA}
+.param ln2 = {2*LAMBDA}
+
+.param wp1 = wn1
+.param wp2 = wn1
+.param lp1 = {LAMBDA}
+.param lp2 = {LAMBDA}
+
+.global gnd
+
+.subckt AND node_A node_B node_OUT VDD GND
+X_and_1 node_A node_B node_midout VDD GND NAND
+X_and_2 node_midout node_OUT VDD GND NOT
+.ends AND
+
+.subckt OR node_A node_B node_OUT VDD GND
+X_or_1 node_A node_B node_midout VDD GND NOR
+X_or_2 node_midout node_OUT VDD GND NOT
+.ends OR
+
+
+Vdd node_x 0 'SUPPLY'
+
+V_S0 node_s0 0 PULSE(0 1.8 0ns 100ps 100ps 200ns 400ns) 
+V_S1 node_s1 0 PULSE(0 1.8 0ns 100ps 100ps 100ns 200ns)  
+
+*defined in such a way that a is always even and b is always odd 
+V_a0 node_a0 0 1.8
+V_a1 node_a1 0 0
+V_a2 node_a2 0 1.8
+V_a3 node_a3 0 0
+
+V_b0 node_b0 0 1.8
+V_b1 node_b1 0 1.8
+V_b2 node_b2 0 1.8
+V_b3 node_b3 0 1.8
+
+*------------------------------------------------------------------------------------------
+Xselnot0 node_s0 node_ns0 node_x 0 NOT 
+Xselnot1 node_s1 node_ns1 node_x 0 NOT 
+Xseld0 node_ns0 node_ns1 node_d0 node_x 0 AND
+Xseld1 node_s0 node_ns1 node_d1 node_x 0 AND
+Xseld2 node_ns0 node_s1 node_d2 node_x 0 AND
+Xseld3 node_s0 node_s1 node_d3 node_x 0 AND
+Cout_d0 node_d0 0 100f
+Cout_d1 node_d1 0 100f
+Cout_d2 node_d2 0 100f
+Cout_d3 node_d3 0 100f
+
+* now writing the structure for enable gates 
+
+* first lets create an OR output for d0 and d1
+* we do this since we have the full adder and subtracter in 
+* the same diagram 
+Xd0d1 node_d0 node_d1 node_d0d1 node_x 0 OR
+
+* now we can write the code for enabler (for full adder subtracter)
+XenFASA0 node_a0 node_d0d1 node_fasa0 node_x 0 AND
+XenFASA1 node_a1 node_d0d1 node_fasa1 node_x 0 AND
+XenFASA2 node_a2 node_d0d1 node_fasa2 node_x 0 AND
+XenFASA3 node_a3 node_d0d1 node_fasa3 node_x 0 AND
+XenFASB0 node_b0 node_d0d1 node_fasb0c node_x 0 AND
+XenFASB1 node_b1 node_d0d1 node_fasb1c node_x 0 AND
+XenFASB2 node_b2 node_d0d1 node_fasb2c node_x 0 AND
+XenFASB3 node_b3 node_d0d1 node_fasb3c node_x 0 AND
+
+* now we compliment B when d1 = 1 
+XcompFASB0 node_fasb0c node_d1 node_fasb0 node_x 0 XOR
+XcompFASB1 node_fasb1c node_d1 node_fasb1 node_x 0 XOR
+XcompFASB2 node_fasb2c node_d1 node_fasb2 node_x 0 XOR
+XcompFASB3 node_fasb3c node_d1 node_fasb3 node_x 0 XOR
+
+* full adder subtracter enable works. now lets write the same thing for comp
+* and and. this code is the same so i havent tested it individually. 
+
+*comparator enable 
+XenCOMA0 node_a0 node_d2 node_ca0 node_x 0 AND
+XenCOMA1 node_a1 node_d2 node_ca1 node_x 0 AND
+XenCOMA2 node_a2 node_d2 node_ca2 node_x 0 AND
+XenCOMA3 node_a3 node_d2 node_ca3 node_x 0 AND
+XenCOMB0 node_b0 node_d2 node_cb0 node_x 0 AND
+XenCOMB1 node_b1 node_d2 node_cb1 node_x 0 AND
+XenCOMB2 node_b2 node_d2 node_cb2 node_x 0 AND
+XenCOMB3 node_b3 node_d2 node_cb3 node_x 0 AND
+
+*AND enable 
+XenANDA0 node_a0 node_d3 node_aa0 node_x 0 AND
+XenANDA1 node_a1 node_d3 node_aa1 node_x 0 AND
+XenANDA2 node_a2 node_d3 node_aa2 node_x 0 AND
+XenANDA3 node_a3 node_d3 node_aa3 node_x 0 AND
+XenANDB0 node_b0 node_d3 node_ab0 node_x 0 AND
+XenANDB1 node_b1 node_d3 node_ab1 node_x 0 AND
+XenANDB2 node_b2 node_d3 node_ab2 node_x 0 AND
+XenANDB3 node_b3 node_d3 node_ab3 node_x 0 AND
+
+*---------------------------------------------------------------------------------
+
+* FULL ADDER SUBTRACTER PART 
+*0th bit 
+X_ha1_0 node_fasa0 node_fasb0 node_fa0w1 node_x 0 XOR
+X_ha2_0 node_fa0w1 node_d1 node_sum0 node_x 0 XOR
+X_and1_0 node_d1 node_fa0w1 node_fa0w2 node_x 0 AND
+X_and2_0 node_fasa0 node_fasb0 node_fa0w3 node_x 0 AND
+X_or_0 node_fa0w2 node_fa0w3 node_car0 node_x 0 OR
+
+*1st bit 
+X_ha1_1 node_fasa1 node_fasb1 node_fa1w1 node_x 0 XOR
+X_ha2_1 node_fa1w1 node_car0 node_sum1 node_x 0 XOR
+X_and1_1 node_car0 node_fa1w1 node_fa1w2 node_x 0 AND
+X_and2_1 node_fasa1 node_fasb1 node_fa1w3 node_x 0 AND
+X_or_1 node_fa1w2 node_fa1w3 node_car1 node_x 0 OR 
+
+*2nd bit 
+X_ha1_2 node_fasa2 node_fasb2 node_fa2w1 node_x 0 XOR
+X_ha2_2 node_fa2w1 node_car1 node_sum2 node_x 0 XOR
+X_and1_2 node_car1 node_fa2w1 node_fa2w2 node_x 0 AND
+X_and2_2 node_fasa2 node_fasb2 node_fa2w3 node_x 0 AND
+X_or_2 node_fa2w2 node_fa2w3 node_car2 node_x 0 OR
+
+*3rd bit 
+X_ha1_3 node_fasa3 node_fasb3 node_fa3w1 node_x 0 XOR
+X_ha2_3 node_fa3w1 node_car2 node_sum3 node_x 0 XOR
+X_and1_3 node_car2 node_fa3w1 node_fa3w2 node_x 0 AND
+X_and2_3 node_fasa3 node_fasb3 node_fa3w3 node_x 0 AND
+X_or_3 node_fa3w2 node_fa3w3 node_carry node_x 0 OR 
+
+* the nodes that matter are: 
+*node_sum0,1,2,3 and node_carry. 
+*--------------------------------------------------------------------------------
+
+*COMPARATOR PART
+*this is divided into three parts: equality, a>b and b>a 
+
+*equality---
+X_eq_0 node_ca0 node_cb0 node_eq0 node_x 0 XNOR
+X_eq_1 node_ca1 node_cb1 node_eq1 node_x 0 XNOR
+X_eq_2 node_ca2 node_cb2 node_eq2 node_x 0 XNOR
+X_eq_3 node_ca3 node_cb3 node_eq3 node_x 0 XNOR
+X_eqand node_eq0 node_eq1 node_eq2 node_eq3 node_eq node_x 0 AND4
+
+*the output is recorded in node_eq
+
+*now lets invert all inputs for usage in a>b and b>a 
+X_notc_a0 node_ca0 node_nca0 node_x 0 NOT
+X_notc_a1 node_ca1 node_nca1 node_x 0 NOT
+X_notc_a2 node_ca2 node_nca2 node_x 0 NOT
+X_notc_a3 node_ca3 node_nca3 node_x 0 NOT
+
+X_notc_b0 node_cb0 node_ncb0 node_x 0 NOT
+X_notc_b1 node_cb1 node_ncb1 node_x 0 NOT
+X_notc_b2 node_cb2 node_ncb2 node_x 0 NOT
+X_notc_b3 node_cb3 node_ncb3 node_x 0 NOT
+
+
+*defining a > b part of the comparator 
+X_gr_a_b_3 node_ca3 node_ncb3 node_agrb3 node_x 0 AND
+X_gr_a_b_2 node_ca2 node_ncb2 node_eq3 node_agrb2 node_x 0 AND3
+X_gr_a_b_1 node_ca1 node_ncb1 node_eq3 node_eq2 node_agrb1 node_x 0 AND4
+X_gr_a_b_0 node_ca0 node_ncb0 node_eq3 node_eq2 node_eq1 node_agrb0 node_x 0 AND5
+X_gr_a_b_or node_agrb3 node_agrb2 node_agrb1 node_agrb0 node_agrb node_x 0 OR4
+
+*defining b > a part of the comparator 
+X_gr_b_a_3 node_nca3 node_cb3 node_bgra3 node_x 0 AND
+X_gr_b_a_2 node_nca2 node_cb2 node_eq3 node_bgra2 node_x 0 AND3
+X_gr_b_a_1 node_nca1 node_cb1 node_eq3 node_eq2 node_bgra1 node_x 0 AND4
+X_gr_b_a_0 node_nca0 node_cb0 node_eq3 node_eq2 node_eq1 node_bgra0 node_x 0 AND5
+X_gr_b_a_or node_bgra0 node_bgra1 node_bgra2 node_bgra3 node_bgra node_x 0 OR4
+
+*the output of a>b is node_agrb 
+*the output of b>a is node_bgra
+
+*---------------------------------------------------------------
+* ANDING PART
+X_AND_0 node_aa0 node_ab0 node_and0 node_x 0 AND
+X_AND_1 node_aa1 node_ab1 node_and1 node_x 0 AND
+X_AND_2 node_aa2 node_ab2 node_and2 node_x 0 AND
+X_AND_3 node_aa3 node_ab3 node_and3 node_x 0 AND
+
+*--------------------------------------------------------------------------------
+
+.tran 1n 400ns
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+
+
+plot v(node_s0) v(node_s1)+2 v(node_d0)+4 v(node_d1)+6 v(node_d2)+8 v(node_d3)+10
+
+plot v(node_a0) v(node_a1)+2 v(node_a2)+4 v(node_a3)+6
+
+plot v(node_b0) v(node_b1)+2 v(node_b2)+4 v(node_b3)+6
+
+
+plot v(node_sum0) v(node_sum1)+2 v(node_sum2)+4 v(node_sum3)+6 v(node_d0)+8 v(node_d1)+10 
+
+
+plot v(node_eq) v(node_agrb)+2 v(node_bgra)+4 v(node_d2)+6
+
+
+plot v(node_and0) v(node_and1)+2 v(node_and2)+4 v(node_and3)+6 v(node_d3)+8
+
+
+
+
+.endc
+.end
+
+
+

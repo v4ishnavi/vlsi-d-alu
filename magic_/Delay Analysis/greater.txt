@@ -1,0 +1,8 @@
+tpd                 =  9.88352e-10 input = A0 output = a_gr_b
+tpd                 =  9.88352e-10 input = A1 output = a_gr_b
+tpd                 =  9.88352e-10 input = A2 output = a_gr_b
+tpd                 =  9.88352e-10 input = A3 output = a_gr_b
+tpd                 =  1.07826e-09 input = B0 output = a_gr_b
+tpd                 =  1.07826e-09 input = B1 output = a_gr_b
+tpd                 =  1.07826e-09 input = B2 output = a_gr_b
+tpd                 =  1.07826e-09 input = B3 output = a_gr_b

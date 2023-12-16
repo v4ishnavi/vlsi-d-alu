@@ -1,0 +1,195 @@
+$date
+	Tue Nov 14 22:51:32 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_alu_verilog $end
+$var wire 1 ! b_greater_a $end
+$var wire 1 " aeqb $end
+$var wire 1 # a_greater_b $end
+$var wire 4 $ a_and_b [3:0] $end
+$var wire 4 % SAS [3:0] $end
+$var wire 1 & CAS $end
+$var reg 4 ' A [3:0] $end
+$var reg 4 ( B [3:0] $end
+$var reg 1 ) s0 $end
+$var reg 1 * s1 $end
+$scope module uut $end
+$var wire 4 + A [3:0] $end
+$var wire 4 , B [3:0] $end
+$var wire 1 & CAS $end
+$var wire 1 # a_greater_b $end
+$var wire 1 " aeqb $end
+$var wire 1 ! b_greater_a $end
+$var wire 1 - car0 $end
+$var wire 1 . car1 $end
+$var wire 1 / car2 $end
+$var wire 1 0 d0 $end
+$var wire 1 1 d0d1 $end
+$var wire 1 2 d1 $end
+$var wire 1 3 d2 $end
+$var wire 1 4 d3 $end
+$var wire 1 5 fa0w1 $end
+$var wire 1 6 fa0w2 $end
+$var wire 1 7 fa0w3 $end
+$var wire 1 8 fa1w1 $end
+$var wire 1 9 fa1w2 $end
+$var wire 1 : fa1w3 $end
+$var wire 1 ; fa2w1 $end
+$var wire 1 < fa2w2 $end
+$var wire 1 = fa2w3 $end
+$var wire 1 > fa3w1 $end
+$var wire 1 ? fa3w2 $end
+$var wire 1 @ fa3w3 $end
+$var wire 1 A ns0 $end
+$var wire 1 B ns1 $end
+$var wire 1 ) s0 $end
+$var wire 1 * s1 $end
+$var wire 4 C nbb [3:0] $end
+$var wire 4 D nba [3:0] $end
+$var wire 4 E eqab [3:0] $end
+$var wire 4 F db [3:0] $end
+$var wire 4 G da [3:0] $end
+$var wire 4 H cb [3:0] $end
+$var wire 4 I bgra [3:0] $end
+$var wire 4 J bb [3:0] $end
+$var wire 4 K ba [3:0] $end
+$var wire 4 L agrb [3:0] $end
+$var wire 4 M ab [3:0] $end
+$var wire 4 N aa [3:0] $end
+$var wire 4 O a_and_b [3:0] $end
+$var wire 4 P SAS [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100 P
+b0 O
+b101 N
+b1111 M
+b0 L
+b0 K
+b0 J
+b0 I
+b1111 H
+b0 G
+b0 F
+b1111 E
+b1111 D
+b1111 C
+1B
+1A
+0@
+1?
+1>
+1=
+0<
+0;
+0:
+19
+18
+17
+06
+05
+04
+03
+02
+11
+10
+1/
+1.
+1-
+b1111 ,
+b101 +
+0*
+0)
+b1111 (
+b101 '
+1&
+b100 %
+b0 $
+0#
+1"
+0!
+$end
+#20
+0.
+0&
+16
+1-
+09
+0<
+0/
+0?
+15
+07
+08
+1;
+0=
+0>
+00
+b0 H
+b110 %
+b110 P
+0A
+12
+1)
+#40
+0.
+0&
+0#
+0"
+1!
+09
+0?
+0/
+b1010 D
+b0 L
+b101 E
+b0 C
+b1000 I
+05
+07
+08
+0;
+0=
+0>
+b0 N
+b0 M
+0-
+b101 K
+b1111 J
+01
+b0 H
+b0 %
+b0 P
+06
+0B
+13
+1A
+02
+1*
+0)
+#50
+1"
+0!
+b1111 D
+b1111 E
+b1111 C
+b0 I
+b101 $
+b101 O
+b0 K
+b0 J
+03
+b101 G
+b1111 F
+0A
+14
+1)
+#60
